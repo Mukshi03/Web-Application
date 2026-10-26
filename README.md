@@ -14,11 +14,14 @@ Single self-contained HTML file — no build step.
 | `#dashboard` | Operations Dashboard |
 | `#asn-new` | New ASN (Inbound booking / ASN) |
 | `#order-new` | New Outbound Order |
+| `#customers` · `#customers/new` · `#customers/edit/CL-001` | Customers list and customer form |
+| `#quotes` · `#quotes/new` · `#quotes/edit/QT-JED-00001` | Service quotations list and form |
+| `#contracts` · `#contracts/new` · `#contracts/edit/CTR-00001` | Contracts list and form |
 
-The two forms follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
+All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
 
 ## Data
 
 - Dashboard figures and master data (customers, warehouses, items, stock) are in the `DATA` object at the top of the `<script>` in `index.html`.
-- Records saved from the forms are kept in the browser (`localStorage`, key `graylane.web.v1`) until a backend exists — replace `persist()` / `store()` with API calls then.
+- Customers, quotations, contracts, ASNs and orders are kept in the browser (`localStorage`, key `graylane.web.v2`; sample records are loaded the first time) until a backend exists — replace `persist()` / `store()` with API calls then.
