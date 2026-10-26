@@ -10,3 +10,5 @@ Standalone dashboard page for the Gray Lane 3PL web app. Single self-contained H
 ## Data
 
 All figures come from the `DATA` object at the top of the `<script>` in `index.html`. Replace it with a `fetch('/api/dashboard')` call when the backend is ready.
+
+<!-- deployed via GitHub Pages -->
