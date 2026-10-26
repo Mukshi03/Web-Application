@@ -22,6 +22,9 @@ Single self-contained HTML file — no build step.
 | `#groups` · `#categories` · `#uom` (add `/new` to open the form) | Item groups, categories, units of measure |
 | `#warehouses` · `#zones` · `#areas` · `#bins` (add `/new` or `/edit/ID`) | Warehouse Setup: warehouses, zones / rooms, storage areas, bins / slots |
 | `#bins/generate` | Generate bins in bulk with a preview |
+| `#inbound` | Inbound dashboard |
+| `#asn` · `#asn/new` · `#asn/edit/ASN-101` | ASN register and ASN record (draft → submit → approve) |
+| `#receiving` · `#grn` · `#putaway` · `#ibinv` (add `/edit/ASN-101`) | Receiving, GRN, put-away and inbound inventory for an ASN |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
