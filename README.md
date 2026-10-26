@@ -29,6 +29,10 @@ Single self-contained HTML file — no build step.
 | `#oborders` · `#oborders/new` · `#oborders/edit/OB-JED-00061` | Outbound order register and order record |
 | `#alloc` · `#pick` · `#loading` · `#dispatch` (add `/edit/OB-JED-00061`) | Allocate stock, pick & confirm, load, confirm dispatch for an order |
 | `#obhistory` | Outbound exceptions & activity history |
+| `#stock` · `#bycust` · `#expiry` · `#holds` | Stock (LPN list, adjust / hold / move), stock by customer, batch & expiry, holds & quarantine |
+| `#moves[/new]` · `#transfers[/new]` | Bin moves inside a warehouse; warehouse transfers (draft → ship → receive → put-away) |
+| `#counts[/new]` · `#adjust[/new]` · `#damage[/new]` | Cycle and full stock counts (freezes the warehouse), adjustments with approval, damage & loss register |
+| `#ledger` · `#ageing` · `#statement` | Stock ledger, stock ageing by customer, customer stock statement (opening → closing) |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
