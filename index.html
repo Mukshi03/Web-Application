@@ -334,6 +334,32 @@ a.rm-kpi{text-decoration:none}.vas-steps{overflow:hidden}@media(max-width:700px)
 .be-inc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:10px}.be-ci{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:10px;cursor:pointer}.be-ci:has(input:checked){border-color:var(--accent);background:var(--info-soft)}.be-ci input{margin-top:3px;accent-color:var(--accent)}.be-ci b{display:block;font-size:13.5px}.be-ci em{font-style:normal;font-size:12px;color:var(--muted)}
 tr.be-off td{opacity:.5}tr.be-det>td{background:var(--surface-2)}.be-dw{display:flex;flex-direction:column;gap:6px;padding:6px 0}.be-dw b{font-size:12.5px}.be-dw table{width:100%;font-size:12.5px;background:var(--surface);border:1px solid var(--line-2);border-radius:8px}
 .be-amt{font-size:14px}.be-amt b{font-size:18px;margin:0 6px}
+.rp-k{text-decoration:none;color:inherit;border-top:3px solid var(--rc,var(--accent))}a.rp-k:hover{border-color:var(--rc,var(--accent))}
+.c-b{--rc:var(--accent)}.c-g{--rc:var(--good)}.c-o{--rc:var(--warn)}.c-r{--rc:var(--bad)}.c-a{--rc:var(--vas)}
+.rp-c{display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;align-items:start}@media(max-width:900px){.rp-c{grid-template-columns:1fr}}
+.rp-side{padding:10px;position:sticky;top:76px}@media(max-width:900px){.rp-side{position:static}}.rp-sh{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 8px 8px}
+.rp-fl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}.rp-sep{height:1px;background:var(--line-2);margin:6px 4px}
+.rp-f{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;color:var(--fg-2);text-decoration:none;font-size:13.5px}.rp-f:hover{background:var(--surface-2);color:var(--fg)}.rp-f.on{background:var(--info-soft);color:var(--fg);font-weight:600}
+.rp-fi{color:var(--rc);display:grid}.rp-fn{flex:1}.rp-f i{font-style:normal;font-size:11.5px;color:var(--muted);background:var(--surface-2);border-radius:99px;padding:1px 8px}
+.rp-main{overflow:hidden}.rp-mh{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line-2);flex-wrap:wrap;border-top:3px solid var(--rc)}.rp-mh>div{flex:1;min-width:200px}.rp-mh h2{margin:0;font-size:16px}.rp-mh p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.rp-hi{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;color:var(--rc);background:var(--surface-2)}
+.rp-search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:0 10px;height:36px;background:var(--surface);color:var(--muted);min-width:min(240px,100%)}.rp-search input{border:0;background:none;outline:0;color:var(--fg);font:inherit;font-size:13.5px;flex:1;min-width:0}.rp-search:focus-within{outline:2px solid var(--accent)}
+.rp-grp{display:flex;justify-content:space-between;align-items:center;padding:12px 16px 6px;font-size:12.5px;font-weight:700;color:var(--fg-2)}.rp-grp span{display:flex;gap:7px;align-items:center}.rp-grp i{font-style:normal;font-weight:400;color:var(--muted)}
+.rp-ul{list-style:none;margin:0;padding:0}.rp-row{display:flex;align-items:center;border-top:1px solid var(--line-2)}.rp-row:hover{background:var(--surface-2)}
+.rp-star{background:none;border:0;padding:0 6px 0 14px;color:var(--muted);cursor:pointer;align-self:stretch}.rp-star.on{color:var(--warn)}.rp-star:hover{color:var(--warn)}
+.rp-link{flex:1;display:grid;grid-template-columns:28px minmax(0,1fr) 190px 190px 14px;align-items:center;gap:10px;padding:11px 16px 11px 4px;color:var(--fg);text-decoration:none;min-width:0}
+.rp-di{color:var(--rc);display:grid}.rp-t{display:flex;flex-direction:column;gap:2px;min-width:0}.rp-t b{font-size:13.5px;font-weight:600}.rp-t em{font-style:normal;font-size:12px;color:var(--muted)}
+.rp-cat{display:flex;gap:5px;align-items:center;font-size:12px;color:var(--muted)}.rp-m{font-size:12.5px;font-weight:600;color:var(--fg-2)}.rp-go{color:var(--muted);font-size:18px}
+#rpBody .rp-ul:not(:has(.rp-cat)) .rp-link{grid-template-columns:28px minmax(0,1fr) 220px 14px}
+@media(max-width:760px){.rp-link,#rpBody .rp-ul:not(:has(.rp-cat)) .rp-link{grid-template-columns:24px minmax(0,1fr) 14px}.rp-cat,.rp-m{display:none}}
+.rp-empty{padding:30px 16px;text-align:center;color:var(--muted);margin:0}
+.rp-bar{display:flex;flex-direction:column;gap:8px}.rp-tab{display:inline-block;padding:9px 14px;font-size:13.5px;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap}.rp-tab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}.rp-tab:hover{color:var(--fg)}
+.rp-bars{display:flex;align-items:stretch;gap:14px;height:240px;padding-top:6px}.rp-bc{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}.rp-bc b{font-size:11.5px;font-weight:600;white-space:nowrap}.rp-bc>span{font-size:12px;color:var(--muted)}
+.rp-col{flex:1;width:100%;max-width:64px;display:flex;align-items:flex-end}.rp-stack{width:100%;display:flex;flex-direction:column-reverse;border-radius:6px 6px 0 0;overflow:hidden;min-height:2px;gap:2px}.rp-stack u{display:block;min-height:3px}
+.s0{background:var(--accent)}.s1{background:var(--good)}.s2{background:var(--vas)}.s3{background:var(--warn)}
+.rp-leg{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--fg-2)}.rp-leg span{display:flex;align-items:center;gap:6px}.rp-leg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.cpt-viz{display:flex;flex-direction:column;gap:10px}.cpt-r{display:grid;grid-template-columns:160px 1fr 130px;gap:10px;align-items:center;font-size:13px}@media(max-width:640px){.cpt-r{grid-template-columns:1fr}}.cpt-bars{display:flex;flex-direction:column;gap:3px}.cpt-bars i{display:block;height:9px;border-radius:4px;min-width:2px}.cpt-in{background:var(--good)}.cpt-out{background:var(--accent)}
+@media print{.rp-bar nav,.rp-side{display:none!important}.rp-c{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1004,7 +1030,7 @@ const NAV = [
     { id: 'inventory', t: 'Inventory', ic: 'layers', subs: [['stock', 'Stock'], ['bycust', 'Stock by Customer'], ['expiry', 'Batch & Expiry'], ['holds', 'Holds & Quarantine'], ['moves', 'Bin Moves', 'bin move'], ['transfers', 'Warehouse Transfers', 'warehouse transfer'], ['counts', 'Stock Counts', 'stock count'], ['adjust', 'Inventory Adjustments', 'inventory adjustment'], ['damage', 'Damage & Loss Register', 'damage or loss case'], ['ledger', 'Stock Ledger'], ['ageing', 'Stock Ageing'], ['statement', 'Customer Stock Statement']] }, { id: 'outbound', t: 'Outbound', ic: 'out', subs: [['outbound', 'Dashboard', 'outbound order'], ['oborders', 'Outbound Orders', 'outbound order'], ['alloc', 'Allocate Stock'], ['pick', 'Pick & Confirm'], ['loading', 'Load'], ['dispatch', 'Confirm Dispatch'], ['obhistory', 'Exceptions & History']] },
     { id: 'returns', t: 'Returns (RMA)', ic: 'ret', subs: [['returns', 'Dashboard', 'RMA'], ['rmareq', 'RMA Request'], ['rmarecv', 'Receive & Inspect'], ['rmaclose', 'Reconcile & Close']] }, { id: 'vas', t: 'Value-Added Services', ic: 'star', subs: [['vas', 'Dashboard', 'VAS request'], ['vasreq', 'VAS Requests', 'VAS request'], ['vaswo', 'Work Orders'], ['vasdone', 'Completion & Verification']] }] },
   { g: 'BILLING & ADMIN', m: [
-    { id: 'billing', t: 'Billing Engine', ic: 'bill', subs: [['svc', 'Service Items', 'service item'], ['ratecard', 'Standard Rate Card'], ['custrates', 'Customer Rates'], ['charges', 'Charges', 'manual charge'], ['storage', 'Storage Capture'], ['billrun', 'Billing Run'], ['bdrafts', 'Billing Drafts'], ['billexc', 'Exceptions']] }, { id: 'reports', t: 'Reports & Analytics', ic: 'chart', href: '#reports' },
+    { id: 'billing', t: 'Billing Engine', ic: 'bill', subs: [['svc', 'Service Items', 'service item'], ['ratecard', 'Standard Rate Card'], ['custrates', 'Customer Rates'], ['charges', 'Charges', 'manual charge'], ['storage', 'Storage Capture'], ['billrun', 'Billing Run'], ['bdrafts', 'Billing Drafts'], ['billexc', 'Exceptions']] }, { id: 'reports', t: 'Reports & Analytics', ic: 'chart', subs: [['reports', 'Report Dashboard'], ['rep-biz', 'Business Overview'], ['rep-cust', 'Customer & Contract'], ['rep-inv', 'Inventory'], ['rep-wh', 'Warehouse'], ['rep-bill', 'Billing & Receivables'], ['rep-audit', 'Activity & Audit']] },
     { id: 'settings', t: 'Settings', ic: 'gear', href: '#settings' }] }
 ];
 const openMods = new Set(['clients']);
@@ -4424,6 +4450,253 @@ function seedBilling() {
 }
 
 /* =====================================================================
+   REPORTS & ANALYTICS  (ERP: Report Center — dashboard, category folders, report pages with CSV / print)
+   ===================================================================== */
+const rpDays = (a, b) => daysBetween(String(a).slice(0, 10), String(b).slice(0, 10));
+const rpShip30 = () => DB.orders.filter(o => o.dispatchedAt && String(o.dispatchedAt).slice(0, 10) >= iso(addDays(today, -30)));
+const rpFill = os => { const a = sum(os, o => sum(o.lines, l => +l.qty || 0)), s = sum(os, o => sum(o.lines, l => +l.short || 0)); return a ? Math.round((a - s) / a * 1000) / 10 : 100; };
+const rpStoreBins = w => DB.bins.filter(b => (!w || b.wh === w) && !SYS_BINS.includes(b.code) && b.cap < 99 && b.life === 'Active');
+const rpOccW = w => { const B = rpStoreBins(w), c = sum(B, b => +b.cap || 0), u = sum(B, b => binCount(b)); return { c, u, p: c ? Math.round(u / c * 100) : 0 }; };
+const rpOcc = () => rpOccW('').p;
+const rpUnbilled = () => DB.charges.filter(bdFree);
+const rpK = k => `<div class="grid g-kpi">${k.map(x => `<div class="card kpi rp-k c-${x[2] || 'b'}"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')}</div>`;
+const rpTone = (v, good, warn) => `<b style="color:var(--${v >= good ? 'good' : v >= warn ? 'warn' : 'bad'})">${v}%</b>`;
+const rpPeriod = (key, def) => { const f = FILT[key] = FILT[key] || {}; if (!f.from) f.from = def ? def[0] : iso(today).slice(0, 8) + '01'; if (!f.to) f.to = def ? def[1] : iso(today); if (f.from > f.to) [f.from, f.to] = [f.to, f.from]; return f; };
+const rpDates = key => { const f = FILT[key]; return `<div class="card"><div class="card-b filters"><label class="field"><span>From</span><input type="date" data-filt2="${key}|from" value="${f.from}"></label><label class="field"><span>To</span><input type="date" data-filt2="${key}|to" value="${f.to}"></label>
+  <div class="row" style="align-self:flex-end;margin-bottom:3px">${[['month', 'This month'], ['lmonth', 'Last month'], ['quarter', 'This quarter'], ['year', 'This year']].map(([k, l]) => `<button type="button" class="btn sm" data-do="rpQuick" data-id="${key}|${k}">${l}</button>`).join('')}</div></div></div>`; };
+
+/* ---- Customer pallet throughput (pallets in / out / stored per customer) ---- */
+const CPT_IN = ['Receipt', 'Return', 'Opening stock'], CPT_OUT = ['Goods issue'];
+function cptCalc(F) {
+  const from = F.from, to = F.to, days = beDays(from, to).slice(0, 370);
+  const mv = DB.moves.filter(m => m.lpn && (!F.wh || m.wh === F.wh)).map(m => ({ ...m, d: String(m.at || '').slice(0, 10) })).sort((a, b) => a.d < b.d ? -1 : a.d > b.d ? 1 : 0);
+  const inT = F.wh ? [...CPT_IN, 'Transfer in'] : CPT_IN, outT = F.wh ? [...CPT_OUT, 'Transfer out', 'Adjustment'] : [...CPT_OUT, 'Adjustment'];
+  return DB.customers.filter(c => (!F.client || c.id === F.client) && c.status !== 'Inactive').map(c => {
+    const M = mv.filter(m => m.client === c.id), bal = {}, first = {}, onHand = () => Object.values(bal).filter(q => q > 0).length; let i = 0;
+    while (i < M.length && M[i].d < from) { const m = M[i++]; bal[m.lpn] = (bal[m.lpn] || 0) + (+m.qty || 0); if (!first[m.lpn] && +m.qty > 0) first[m.lpn] = m.d; }
+    const open = onHand(); let pd = 0, peak = open, uin = 0, uout = 0; const pin = new Set(), pout = new Set(), part = new Set(), dwell = [];
+    days.forEach(d => { while (i < M.length && M[i].d === d) { const m = M[i++], q = +m.qty || 0, was = bal[m.lpn] || 0; bal[m.lpn] = was + q; if (!first[m.lpn] && q > 0) first[m.lpn] = d;
+        if (inT.includes(m.type) && q > 0) { uin += q; if (was <= 0) pin.add(m.lpn); }
+        if (outT.includes(m.type) && q < 0) { if (m.type === 'Goods issue') uout += -q; if (bal[m.lpn] <= 0) { pout.add(m.lpn); part.delete(m.lpn); if (first[m.lpn]) dwell.push(rpDays(first[m.lpn], d)); } else if (!pout.has(m.lpn) && m.type === 'Goods issue') part.add(m.lpn); } }
+      const n = onHand(); pd += n; if (n > peak) peak = n; });
+    const close = onHand(), avg = days.length ? pd / days.length : 0, orders = DB.orders.filter(o => o.client === c.id && (!F.wh || o.wh === F.wh) && o.dispatchedAt && String(o.dispatchedAt).slice(0, 10) >= from && String(o.dispatchedAt).slice(0, 10) <= to).length;
+    return { id: c.id, name: c.name, open, pin: pin.size, pout: pout.size, part: part.size, close, avg, peak, pd, uin, uout, orders, turn: avg ? pout.size / avg : 0, dwell: dwell.length ? sum(dwell, x => x) / dwell.length : null }; });
+}
+
+/* ---- the reports: [key, title, description, key figure, body] ---- */
+const REP = {
+  monthly: ['Monthly Billing Summary', 'Storage, handling, VAS and transport revenue for the last 6 months', () => '6-month trend', () => {
+    const Mo = [...Array(6)].map((_, i) => { const d = new Date(today.getFullYear(), today.getMonth() - 5 + i, 15); return iso(d).slice(0, 7); });
+    const rows = Mo.map(m => { const ch = DB.charges.filter(c => String(c.at).slice(0, 7) === m), o = { id: m, m, tot: sum(ch, c => c.amount) }; BE_CATS.forEach(k => o[k] = sum(ch.filter(c => beCat(c) === k), c => c.amount)); return o; }), mx = Math.max(1, ...rows.map(r => r.tot));
+    const lbl = m => new Date(m + '-15T12:00:00').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' });
+    return rpK(BE_CATS.map((k, i) => [k + ' · 6 months, SAR', sar(sum(rows, r => r[k])), ['b', 'g', 'a', 'o'][i]]))
+      + card('Revenue by month, SAR excl. VAT', `<div class="card-b"><div class="rp-bars">${rows.map(r => `<div class="rp-bc"><b>${r.tot ? sar(r.tot) : '—'}</b><div class="rp-col"><div class="rp-stack" style="height:${Math.round(r.tot / mx * 100)}%">${BE_CATS.map((k, i) => r[k] ? `<u class="s${i}" style="flex:${r[k]}" title="${k}: SAR ${sar(r[k])}"></u>` : '').join('')}</div></div><span>${lbl(r.m)}</span></div>`).join('')}</div>
+        <div class="rp-leg">${BE_CATS.map((k, i) => `<span><i class="s${i}"></i>${k}</span>`).join('')}</div></div>`)
+      + card('By month', tbl([['Month', r => lbl(r.m)], ...BE_CATS.map(k => [k, r => r[k] ? sar(r[k]) : '—', 1]), ['Total', r => `<b>${sar(r.tot)}</b>`, 1]], rows, null, ''))
+      + `<p class="note">Revenue is the charges raised in each month, before VAT, billed or not. Storage billed by a billing run is counted in the month of the run.</p>`; }],
+  client: ['Customer Profitability', 'Revenue by customer and service, with pallets held and unbilled work', () => n0(DB.customers.length) + ' customers', () => {
+    const rows = DB.customers.map(c => { const ch = DB.charges.filter(x => x.client === c.id), o = { id: c.id, c, tot: sum(ch, x => x.amount), unb: sum(ch.filter(bdFree), x => x.amount), pal: DB.stock.filter(s => s.client === c.id).length }; BE_CATS.forEach(k => o[k] = sum(ch.filter(x => beCat(x) === k), x => x.amount)); return o; }).sort((a, b) => b.tot - a.tot), all = sum(rows, r => r.tot) || 1;
+    return rpK([['Revenue, SAR', sar(sum(rows, r => r.tot)), 'b'], ['Top customer', esc((rows[0] || {}).c ? rows[0].c.name : '—'), 'g'], ['Unbilled, SAR', sar(sum(rows, r => r.unb)), 'o'], ['Pallets held', n0(sum(rows, r => r.pal)), 'a']])
+      + card('All charges by customer, SAR excl. VAT', tbl([['Customer', r => `<b>${esc(r.c.name)}</b>`], ...BE_CATS.map(k => [k, r => r[k] ? sar(r[k]) : '—', 1]), ['Total', r => `<b>${sar(r.tot)}</b>`, 1], ['Share', r => `<div class="rm-prog"><em><u style="width:${Math.round(r.tot / all * 100)}%"></u></em><span>${Math.round(r.tot / all * 100)}%</span></div>`], ['Unbilled', r => r.unb ? `<span style="color:var(--warn)">${sar(r.unb)}</span>` : '—', 1], ['Pallets held', r => n0(r.pal), 1]], rows, null, ''))
+      + `<p class="note">Cost to serve (labour, space, fleet) is not captured yet, so this shows revenue only. Adding costs per warehouse turns it into margin.</p>`; }],
+  thru: ['Throughput', 'Pallets and units received and shipped per day, last 14 days', () => n0(rpShip30().length) + ' orders shipped · 30 days', () => {
+    const days = [...Array(14)].map((_, i) => iso(addDays(today, i - 13))).reverse();
+    const rows = days.map(d => { const g = DB.grns.filter(x => String(x.at).slice(0, 10) === d), mv = DB.moves.filter(m => String(m.at).slice(0, 10) === d); return { id: d, grn: g.length, pin: new Set(mv.filter(m => ['Receipt', 'Return'].includes(m.type) && m.qty > 0).map(m => m.lpn)).size, uin: sum(mv.filter(m => ['Receipt', 'Return'].includes(m.type)), m => m.qty), ord: DB.orders.filter(o => String(o.dispatchedAt || '').slice(0, 10) === d).length, uout: -sum(mv.filter(m => m.type === 'Goods issue'), m => m.qty) }; });
+    return rpK([['Pallets in · 14 days', n0(sum(rows, r => r.pin)), 'g'], ['Units in', n0(sum(rows, r => r.uin)), 'g'], ['Orders shipped', n0(sum(rows, r => r.ord)), 'b'], ['Units out', n0(sum(rows, r => r.uout)), 'b']])
+      + card('Daily inbound and outbound', tbl([['Date', r => fmtDate(r.id)], ['GRNs', r => r.grn || '—', 1], ['Pallets in', r => r.pin || '—', 1], ['Units in', r => r.uin ? n0(r.uin) : '—', 1], ['Orders shipped', r => r.ord || '—', 1], ['Units out', r => r.uout ? n0(r.uout) : '—', 1]], rows, null, '')); }],
+  cpt: ['Customer Pallet Throughput', 'Pallets in, out, stored and turnover per customer for any period', () => { const T = iso(today); return n0(sum(cptCalc({ from: T.slice(0, 8) + '01', to: T }), r => r.pin + r.pout)) + ' pallets moved this month'; }, () => {
+    const F = rpPeriod('cpt'), rows = cptCalc(F), tot = k => sum(rows, r => r[k]), mx = Math.max(1, ...rows.map(r => Math.max(r.pin, r.pout)));
+    return filterBar('cpt', [{ id: 'client', label: 'Customer', options: custOpts2() }, { id: 'wh', label: 'Warehouse', options: whOpts2() }]) + rpDates('cpt')
+      + rpK([['Pallets in', n0(tot('pin')), 'g'], ['Pallets out', n0(tot('pout')), 'b'], ['Net change', (tot('pin') - tot('pout') > 0 ? '+' : '') + n0(tot('pin') - tot('pout')), 'a'], ['Avg pallets stored', sum(rows, r => r.avg).toFixed(1), 'o'], ['Pallet-days', n0(tot('pd')), 'b'], ['Orders dispatched', n0(tot('orders')), 'g']])
+      + card('Pallets in and out by customer', `<div class="card-b cpt-viz">${rows.map(r => `<div class="cpt-r"><span class="cpt-n">${esc(r.name)}</span><div class="cpt-bars"><i class="cpt-in" style="width:${r.pin / mx * 100}%"></i><i class="cpt-out" style="width:${r.pout / mx * 100}%"></i></div><span class="note">${n0(r.pin)} in · ${n0(r.pout)} out</span></div>`).join('') || '<div class="empty">No customers.</div>'}<div class="rp-leg"><span><i class="cpt-in"></i>Pallets in</span><span><i class="cpt-out"></i>Pallets out</span></div></div>`)
+      + card(`${rows.length} customers · ${fmtDate(F.from)} – ${fmtDate(F.to)}`, tbl([['Customer', r => `<b>${esc(r.name)}</b>`], ['Opening pallets', r => n0(r.open), 1], ['Pallets in', r => `<b>${n0(r.pin)}</b>`, 1], ['Pallets out', r => `<b>${n0(r.pout)}</b>`, 1], ['Part-picked', r => n0(r.part), 1], ['Closing pallets', r => n0(r.close), 1], ['Avg stored', r => r.avg.toFixed(1), 1], ['Peak', r => n0(r.peak), 1], ['Pallet-days', r => n0(r.pd), 1], ['Units in', r => n0(r.uin), 1], ['Units out', r => n0(r.uout), 1], ['Orders', r => n0(r.orders), 1], ['Turnover', r => r.avg ? r.turn.toFixed(2) + '×' : '—', 1], ['Avg days stored', r => r.dwell == null ? '—' : r.dwell.toFixed(1), 1]], rows, null, ''))
+      + `<p class="note"><b>Pallets in</b>: new pallets received (receipts, returns). <b>Pallets out</b>: pallets fully shipped or emptied. <b>Part-picked</b>: pallets shipped from but still holding stock. <b>Pallet-days</b>: pallets on hand counted every day of the period, the basis for storage billing. <b>Turnover</b>: pallets out ÷ average pallets stored. Transfers count only when a warehouse is chosen.</p>`; }],
+  revenue: ['Revenue by Customer & Service', 'Charges by customer and by service for any period', () => 'SAR ' + sar(sum(DB.charges.filter(c => c.at >= iso(today).slice(0, 8) + '01'), c => c.amount)) + ' this month', () => {
+    const F = rpPeriod('rev'), ch = DB.charges.filter(x => x.at >= F.from && x.at <= F.to), rows = DB.customers.map(c => { const x = ch.filter(y => y.client === c.id), o = { id: c.id, tot: sum(x, y => y.amount), billed: sum(x.filter(y => !bdFree(y)), y => y.amount) }; BE_CATS.forEach(k => o[k] = sum(x.filter(y => beCat(y) === k), y => y.amount)); return o; }).filter(r => r.tot);
+    const bySvc = {}; ch.forEach(x => { const k = x.svc || x.type; (bySvc[k] = bySvc[k] || { id: k, name: x.svc ? svcBy(x.svc).name || x.type : x.type, cat: beCat(x), n: 0, q: 0, a: 0 }); bySvc[k].n++; bySvc[k].q += +x.qty || 0; bySvc[k].a += x.amount; });
+    return rpDates('rev') + rpK([['Revenue, SAR', sar(sum(rows, r => r.tot)), 'b'], ['Billed (in drafts), SAR', sar(sum(rows, r => r.billed)), 'g'], ['Unbilled, SAR', sar(sum(rows, r => r.tot - r.billed)), 'o'], ['Charges', n0(ch.length), 'a']])
+      + card(`By customer · SAR ${sar(sum(rows, r => r.tot))}`, tbl([['Customer', r => `<b>${esc(clName(r.id))}</b>`], ...BE_CATS.map(k => [k, r => r[k] ? sar(r[k]) : '—', 1]), ['Total, SAR', r => `<b>${sar(r.tot)}</b>`, 1], ['Billed, SAR', r => sar(r.billed), 1], ['Unbilled, SAR', r => r.tot - r.billed ? `<span style="color:var(--warn)">${sar(r.tot - r.billed)}</span>` : '0.00', 1]], rows, null, 'No charges in this period.'))
+      + card('By service', tbl([['Service', r => `<span class="mono note">${esc(/^[A-Z]{3}-\d/.test(r.id) ? r.id : '')}</span> ${esc(r.name)}`], ['Category', r => esc(r.cat)], ['Charges', r => r.n, 1], ['Quantity', r => n0(r.q), 1], ['Revenue, SAR', r => `<b>${sar(r.a)}</b>`, 1]], Object.values(bySvc).sort((a, b) => b.a - a.a), null, 'No charges in this period.'))
+      + `<p class="note">Revenue is the service charges raised in the period, before VAT, billed or not.</p>`; }],
+  contracts: ['Contract Status & Expiry', 'Active contracts, end dates and renewals due', () => n0(DB.contracts.filter(k => ctrState(k) === 'Active' && ctrDaysLeft(k) != null && ctrDaysLeft(k) <= 60).length) + ' expiring ≤ 60 days', () => {
+    const K = DB.contracts.slice().sort((a, b) => (a.end || '').localeCompare(b.end || '')), dl = k => ctrDaysLeft(k);
+    return rpK([['Active', n0(K.filter(k => ctrState(k) === 'Active').length), 'g'], ['Expiring ≤ 60 days', n0(K.filter(k => ctrState(k) === 'Active' && dl(k) != null && dl(k) <= 60).length), 'o'], ['Waiting for approval', n0(K.filter(k => k.status === 'Pending approval').length), 'b'], ['Customers without contract', n0(DB.customers.filter(c => c.status !== 'Inactive' && !ctrActive(c.id)).length), 'r']])
+      + card(`${K.length} contracts`, tbl([['Contract', k => `<span class="mono">${esc(k.id || '')}</span>${k.ref ? '<br><span class="note">' + esc(k.ref) + '</span>' : ''}`], ['Customer', k => esc(clName(k.client))], ['Version', k => 'v' + (k.version || 1), 1], ['Start', k => fmtDate(k.start)], ['End', k => fmtDate(k.end)], ['Days left', k => { const d = dl(k); return d == null ? '—' : `<b style="color:var(--${d < 0 ? 'bad' : d <= 60 ? 'warn' : 'good'})">${d}</b>`; }, 1], ['Services', k => n0((k.lines || []).length), 1], ['Status', k => pill(ctrState(k))]], K, k => '#contracts/edit/' + encodeURIComponent(k.id), 'No contracts.')); }],
+  rateexc: ['Rate Exceptions', 'Work charged at non-contract, exception or manual rates', () => 'Pricing control', () => {
+    const R = [], add = (kind, ref, cl, svc, rate, std, note) => R.push({ id: kind + ref + svc, kind, ref, client: cl, svc, rate, std, note });
+    (DB.vas || []).filter(v => v.rs && !v.rs.contract).forEach(v => add('VAS at non-contract rate', v.id, v.client, v.svc, v.rs.rate, svcBy(v.svc).rate, v.rs.src + (v.rs.ref ? ' · ' + v.rs.ref : '')));
+    (DB.vas || []).filter(v => v.status === 'Rate pending').forEach(v => add('Rate pending', v.id, v.client, v.svc, null, svcBy(v.svc).rate, 'No agreed rate yet'));
+    DB.charges.filter(c => c.manual && /Manual rate|Standard rate/.test(c.rateSrc || '') && ctrActive(c.client)).forEach(c => add(c.rateSrc === 'Manual rate' ? 'Manual charge at a typed rate' : 'Charged at standard rate', c.id, c.client, c.svc, c.rate, svcBy(c.svc).rate, c.memo || c.type));
+    DB.contracts.filter(k => ctrState(k) === 'Active').forEach(k => k.lines.forEach(l => { const s = svcBy(l.code); if (s.rate && l.rate < s.rate * 0.75) add('Contract rate over 25% below standard', k.id, k.client, l.code, l.rate, s.rate, Math.round((1 - l.rate / s.rate) * 100) + '% below standard'); }));
+    return rpK([['Exceptions', n0(R.length), 'o'], ['Rate pending', n0(R.filter(r => r.kind === 'Rate pending').length), 'r'], ['Below standard', n0(R.filter(r => /below/.test(r.kind)).length), 'a'], ['Manual / standard charges', n0(R.filter(r => /Manual|standard rate/.test(r.kind)).length), 'b']])
+      + card(`${R.length} exceptions`, tbl([['Exception', r => `<span class="pill p-${r.kind === 'Rate pending' ? 'bad' : 'warn'}">${esc(r.kind)}</span>`], ['Reference', r => `<span class="mono">${esc(r.ref)}</span>`], ['Customer', r => esc(clName(r.client))], ['Service', r => `<span class="mono note">${esc(r.svc || '')}</span> ${esc(svcBy(r.svc).name || '')}`], ['Rate used, SAR', r => r.rate == null ? '—' : beRate(r.rate), 1], ['Standard, SAR', r => r.std ? sar(r.std) : '—', 1], ['Note', r => `<span class="note">${esc(r.note || '')}</span>`]], R, null, 'No rate exceptions.')); }],
+  bal: ['Stock Balance', 'On-hand, reserved and available stock by customer, item and warehouse', () => n0(sum(DB.stock, s => s.qty)) + ' units', () => {
+    const g = {}; DB.stock.forEach(s => { const k = s.client + '|' + s.sku + '|' + s.wh; (g[k] = g[k] || { id: k, client: s.client, sku: s.sku, wh: s.wh, qty: 0, alloc: 0, pal: 0, hold: 0 }); g[k].qty += s.qty; g[k].alloc += s.alloc || 0; g[k].pal++; if (s.status !== 'Available') g[k].hold += s.qty; });
+    const rows = applyFilt('rbal', Object.values(g).sort((a, b) => clName(a.client).localeCompare(clName(b.client)) || a.sku.localeCompare(b.sku)), {});
+    return filterBar('rbal', [{ id: 'client', label: 'Customer', options: custOpts2() }, { id: 'wh', label: 'Warehouse', options: whOpts2() }])
+      + rpK([['Pallets', n0(sum(rows, r => r.pal)), 'b'], ['On hand', n0(sum(rows, r => r.qty)), 'g'], ['Reserved', n0(sum(rows, r => r.alloc)), 'a'], ['Not available', n0(sum(rows, r => r.hold)), 'o'], ['Free to sell', n0(sum(rows, r => r.qty - r.alloc - r.hold)), 'g']])
+      + card('On hand by customer, item and warehouse', tbl([['Customer', r => esc(clName(r.client))], ['Item', r => itemCell(r.sku)], ['Warehouse', r => esc(whRec(r.wh).name)], ['Pallets', r => r.pal, 1], ['On hand', r => n0(r.qty), 1], ['Reserved', r => n0(r.alloc), 1], ['Not available', r => r.hold ? `<span style="color:var(--warn)">${n0(r.hold)}</span>` : '0', 1], ['Free to sell', r => `<b>${n0(r.qty - r.alloc - r.hold)}</b>`, 1]], rows, null, 'No stock.')); }],
+  ageing: ['Stock Ageing', 'Pallets and units by days in storage: 0–30, 31–60, 61–90, 90+', () => n0(DB.stock.filter(s => s.received && rpDays(s.received, iso(today)) > 90).length) + ' pallets over 90 days', () => {
+    const B = [['0–30', 0, 30], ['31–60', 31, 60], ['61–90', 61, 90], ['90+', 91, 1e9]], age = s => s.received ? rpDays(s.received, iso(today)) : 0;
+    const rows = DB.customers.map(c => { const st = DB.stock.filter(s => s.client === c.id); return { id: c.id, c, b: B.map(([, a, z]) => st.filter(s => age(s) >= a && age(s) <= z)), n: st.length, avg: st.length ? Math.round(sum(st, age) / st.length) : 0 }; }).filter(r => r.n);
+    const all = B.map(([, a, z]) => DB.stock.filter(s => age(s) >= a && age(s) <= z).length);
+    return rpK(B.map((b, i) => [b[0] + ' days', n0(all[i]) + ' pallets', i === 3 ? 'r' : i === 2 ? 'o' : 'g']))
+      + card('By customer', tbl([['Customer', r => esc(r.c.name)], ...B.map((b, i) => [b[0] + ' days', r => { const p = r.b[i]; return p.length ? `<b style="color:${i === 3 ? 'var(--bad)' : i === 2 ? 'var(--warn)' : 'inherit'}">${n0(p.length)}</b> <span class="note">· ${n0(sum(p, s => s.qty))} u</span>` : '—'; }, 1]), ['Pallets', r => n0(r.n), 1], ['Avg. days', r => n0(r.avg), 1]], rows, null, 'No stock.'))
+      + `<p class="note">For the pallet list and filters, open Inventory → Stock Ageing.</p>`; }],
+  expiry: ['Expiry Risk', 'Stock that is expired or expires within 30 / 90 days', () => n0(DB.stock.filter(s => s.expiry && rpDays(iso(today), s.expiry) <= 30).length) + ' pallets ≤ 30 days', () => {
+    const d = s => rpDays(iso(today), s.expiry), L = DB.stock.filter(s => s.expiry && d(s) <= 90).sort((a, b) => a.expiry.localeCompare(b.expiry)), band = s => d(s) < 0 ? ['Expired', 'bad'] : d(s) <= 30 ? ['≤ 30 days', 'bad'] : ['31–90 days', 'warn'];
+    return rpK([['Expired', n0(L.filter(s => d(s) < 0).length) + ' pallets', 'r'], ['Expires ≤ 30 days', n0(L.filter(s => d(s) >= 0 && d(s) <= 30).length) + ' pallets', 'o'], ['Expires 31–90 days', n0(L.filter(s => d(s) > 30).length) + ' pallets', 'b'], ['Units at risk', n0(sum(L, s => s.qty)), 'g']])
+      + card(`${L.length} pallets`, tbl([['LPN', s => `<a class="mono" href="#" data-do="invLpn" data-id="${esc(s.lpn)}">${esc(s.lpn)}</a>`], ['Customer', s => esc(clName(s.client))], ['Item', s => itemCell(s.sku)], ['Batch', s => `<span class="mono">${esc(s.batch || '—')}</span>`], ['Warehouse / bin', s => esc(whRec(s.wh).name) + ' <span class="mono">' + esc(s.bin) + '</span>'], ['Qty', s => n0(s.qty), 1], ['Expiry', s => fmtDate(s.expiry)], ['Days left', s => `<b style="color:var(--${band(s)[1]})">${d(s)}</b>`, 1], ['Risk', s => `<span class="pill p-${band(s)[1]}">${band(s)[0]}</span>`]], L, null, 'Nothing expires in the next 90 days.')); }],
+  accuracy: ['Inventory Accuracy', 'Cycle and stock count results, variances and adjustments', () => n0((DB.adjustments || []).length) + ' adjustments', () => {
+    const C = DB.counts || [], L = C.flatMap(c => c.lines.filter(l => l.counted != null)), ok = L.filter(l => +l.counted === +l.expected).length, A = DB.adjustments || [], acc = L.length ? Math.round(ok / L.length * 1000) / 10 : null;
+    return rpK([['Counts', n0(C.length), 'b'], ['Lines counted', n0(L.length), 'b'], ['Accuracy', acc == null ? '—' : acc + '%', acc != null && acc < 98 ? 'o' : 'g'], ['Adjustments', n0(A.length), 'o']])
+      + card('Stock counts', tbl([['Count', c => `<span class="mono">${esc(c.id)}</span>`], ['Type', c => esc(c.type)], ['Warehouse', c => esc(whRec(c.wh).name)], ['Scope', c => esc(c.scope || '')], ['Lines', c => n0(c.lines.length), 1], ['Counted', c => n0(c.lines.filter(l => l.counted != null).length), 1], ['Variances', c => { const v = c.lines.filter(l => l.counted != null && +l.counted !== +l.expected).length; return v ? `<b style="color:var(--bad)">${v}</b>` : '0'; }, 1], ['Status', c => pill(c.status)]], C.slice().reverse(), null, 'No counts yet. Start one in Inventory → Stock Counts.')); }],
+  adjust: ['Adjustments & Variances', 'Stock adjustments by reason, customer and units', () => n0((DB.adjustments || []).filter(a => a.status === 'Pending').length) + ' pending', () => {
+    const A = (DB.adjustments || []).slice().reverse(), g = {}; A.filter(a => a.status !== 'Rejected').forEach(a => { (g[a.reason] = g[a.reason] || { id: a.reason, reason: a.reason, n: 0, plus: 0, minus: 0 }); g[a.reason].n++; if (a.diff > 0) g[a.reason].plus += a.diff; else g[a.reason].minus += -a.diff; });
+    return rpK([['Adjustments', n0(A.length), 'b'], ['Pending', n0(A.filter(a => a.status === 'Pending').length), 'o'], ['Units added', n0(sum(A.filter(a => a.diff > 0 && a.status === 'Posted'), a => a.diff)), 'g'], ['Units removed', n0(sum(A.filter(a => a.diff < 0 && a.status === 'Posted'), a => -a.diff)), 'r']])
+      + card('By reason', tbl([['Reason', x => esc(x.reason || '—')], ['Adjustments', x => n0(x.n), 1], ['Units +', x => x.plus ? `<span style="color:var(--good)">+${n0(x.plus)}</span>` : '—', 1], ['Units −', x => x.minus ? `<span style="color:var(--bad)">−${n0(x.minus)}</span>` : '—', 1]], Object.values(g), null, 'No adjustments.'))
+      + card('All adjustments', tbl([['Adjustment', a => `<span class="mono">${esc(a.id)}</span>`], ['Date', a => fmtDate(a.created)], ['Customer', a => esc(clName(a.client))], ['Item', a => itemCell(a.sku)], ['LPN', a => `<span class="mono">${esc(a.lpn || '')}</span>`], ['Change', a => `<b style="color:var(--${a.diff < 0 ? 'bad' : 'good'})">${a.diff > 0 ? '+' : ''}${n0(a.diff)}</b>`, 1], ['Reason', a => esc(a.reason || '')], ['Source', a => `<span class="mono note">${esc(a.source || '')}</span>`], ['Status', a => pill(a.status)]], A, null, 'No adjustments.')); }],
+  occupancy: ['Warehouse Occupancy', 'Pallet positions used against capacity, per warehouse', () => rpOcc() + '% used', () => {
+    const W = DB.warehouses.filter(w => w.status !== 'Inactive').map(w => { const o = rpOccW(w.id); return { id: w.id, w, ...o, free: Math.max(0, o.c - o.u), stage: DB.stock.filter(s => s.wh === w.id && SYS_BINS.includes(s.bin)).length, cl: new Set(DB.stock.filter(s => s.wh === w.id).map(s => s.client)).size }; }), T = rpOccW('');
+    return rpK([['Storage positions', n0(T.c) + ' pallets', 'b'], ['Used', n0(T.u) + ' pallets', 'o'], ['Free', n0(Math.max(0, T.c - T.u)) + ' pallets', 'g'], ['Occupancy', T.p + '%', T.p > 90 ? 'r' : 'g']])
+      + card('By warehouse', tbl([['Warehouse', x => `<b>${esc(x.w.name)}</b><br><span class="note">${esc(x.w.type || '')}${x.w.city ? ' · ' + esc(x.w.city) : ''}</span>`], ['Positions', x => n0(x.c), 1], ['Used', x => n0(x.u), 1], ['Free', x => n0(x.free), 1], ['Occupancy', x => `<div class="rm-prog"><em><u style="width:${Math.min(100, x.p)}%;background:var(--${x.p > 90 ? 'bad' : x.p > 75 ? 'warn' : 'good'})"></u></em><span>${x.p}%</span></div>`], ['On docks / QA', x => n0(x.stage), 1], ['Customers', x => n0(x.cl), 1]], W, null, ''))
+      + `<p class="note">Positions are the pallet capacity of active storage bins (docks, staging, returns and QA bins are not counted). Change capacity in Warehouse Setup → Bins / Slots.</p>`; }],
+  inbound: ['Inbound Receipts', 'ASNs, receipts and units received by customer', () => n0(DB.asns.length) + ' ASNs', () => {
+    const rows = DB.customers.map(c => { const a = DB.asns.filter(x => x.client === c.id && x.status !== 'Cancelled'), done = a.filter(x => x.grn || ['Completed'].includes(x.status)), exp = sum(a, x => sum(x.lines || [], l => +l.qty || 0)), rec = sum(DB.moves.filter(m => m.client === c.id && m.type === 'Receipt'), m => +m.qty || 0);
+      return { id: c.id, c, n: a.length, done: done.length, open: a.length - done.length, exp, rec, grn: DB.grns.filter(g => g.client === c.id).length }; }).filter(r => r.n || r.rec);
+    return rpK([['ASNs', n0(sum(rows, r => r.n)), 'b'], ['Received (GRN)', n0(sum(rows, r => r.done)), 'g'], ['Open', n0(sum(rows, r => r.open)), 'o'], ['Units received', n0(sum(rows, r => r.rec)), 'g']])
+      + card('By customer', tbl([['Customer', r => esc(r.c.name)], ['ASNs', r => n0(r.n), 1], ['GRNs', r => n0(r.grn), 1], ['Open', r => r.open ? `<b style="color:var(--warn)">${n0(r.open)}</b>` : '0', 1], ['Units expected', r => n0(r.exp), 1], ['Units received', r => `<b>${n0(r.rec)}</b>`, 1]], rows, null, 'No inbound activity yet.')); }],
+  outbound: ['Outbound Fulfilment', 'Orders, units shipped, fill rate and on-time dispatch', () => rpFill(rpShip30()) + '% fill rate', () => {
+    const rows = DB.customers.map(c => { const o = DB.orders.filter(x => x.client === c.id && x.status !== 'Cancelled'), sh = o.filter(x => x.dispatchedAt), ord = sum(sh, x => sum(x.lines, l => +l.qty || 0)), short = sum(sh, x => sum(x.lines, l => +l.short || 0)), onT = sh.filter(x => !x.due || String(x.dispatchedAt).slice(0, 10) <= x.due).length;
+      return { id: c.id, c, n: o.length, sh: sh.length, ord, ship: ord - short, fill: ord ? Math.round((ord - short) / ord * 1000) / 10 : 0, ot: sh.length ? Math.round(onT / sh.length * 100) : 0 }; }).filter(r => r.n);
+    const sh = DB.orders.filter(o => o.dispatchedAt);
+    return rpK([['Orders', n0(sum(rows, r => r.n)), 'b'], ['Dispatched', n0(sum(rows, r => r.sh)), 'g'], ['Fill rate', rpFill(sh) + '%', 'g'], ['Units shipped', n0(sum(rows, r => r.ship)), 'a']])
+      + card('By customer', tbl([['Customer', r => esc(r.c.name)], ['Orders', r => n0(r.n), 1], ['Dispatched', r => n0(r.sh), 1], ['Units ordered (dispatched)', r => n0(r.ord), 1], ['Units shipped', r => n0(r.ship), 1], ['Fill rate', r => r.sh ? rpTone(r.fill, 99, 95) : '—', 1], ['On-time dispatch', r => r.sh ? rpTone(r.ot, 95, 85) : '—', 1]], rows, null, 'No outbound orders yet.')); }],
+  sla: ['SLA Performance', 'Dispatch performance against the requested date', () => n0(DB.orders.filter(o => o.dispatchedAt).length) + ' orders measured', () => {
+    const rows = DB.customers.map(c => { const os = DB.orders.filter(o => o.client === c.id && o.dispatchedAt), ok = os.filter(o => !o.due || String(o.dispatchedAt).slice(0, 10) <= o.due).length; return { id: c.id, n: os.length, ok, late: DB.orders.filter(o => o.client === c.id && isLate(o)).length, sla: (client(c.id).sla || '') }; });
+    const N = sum(rows, r => r.n), OK = sum(rows, r => r.ok);
+    return rpK([['Orders shipped', n0(N), 'b'], ['On time', n0(OK), 'g'], ['On-time %', N ? Math.round(OK / N * 100) + '%' : '—', 'g'], ['Open and late', n0(sum(rows, r => r.late)), 'r']])
+      + card('On-time dispatch by customer', tbl([['Customer', r => esc(clName(r.id))], ['Orders shipped', r => r.n, 1], ['On time', r => r.ok, 1], ['On-time %', r => r.n ? rpTone(Math.round(r.ok / r.n * 100), 95, 85) : '—', 1], ['Open and late', r => r.late ? `<a class="pill p-bad" href="#oborders">${r.late}</a>` : '0', 1]], rows, null, ''))
+      + `<p class="note">On time means dispatched on or before the order's requested date. Open and late are orders not yet dispatched whose requested date has passed.</p>`; }],
+  returns: ['Returns Summary', 'RMAs and units returned, split good / hold / damaged / disposed', () => n0((DB.returns || []).length) + ' RMAs', () => {
+    const R = DB.returns || [], rows = DB.customers.map(c => { const r = R.filter(x => x.client === c.id && !['Cancelled', 'Rejected'].includes(x.status)), t = k => sum(r, x => sum(x.lines, l => +l[k] || 0)), shipped = sum(DB.orders.filter(o => o.client === c.id && o.dispatchedAt), o => sum(o.lines, l => (+l.qty || 0) - (+l.short || 0)));
+      return { id: c.id, c, n: r.length, open: r.filter(x => x.status !== 'Closed').length, ret: t('ret'), recv: t('recv'), good: t('good'), hold: t('hold'), dmg: t('dmg'), disp: t('disp'), rate: shipped ? Math.round(t('ret') / shipped * 1000) / 10 : 0 }; }).filter(r => r.n);
+    return rpK([['RMAs', n0(sum(rows, r => r.n)), 'b'], ['Open', n0(sum(rows, r => r.open)), 'o'], ['Units received', n0(sum(rows, r => r.recv)), 'g'], ['Restocked good', n0(sum(rows, r => r.good)), 'g']])
+      + card('By customer', tbl([['Customer', r => esc(r.c.name)], ['RMAs', r => n0(r.n), 1], ['Open', r => n0(r.open), 1], ['Authorised', r => n0(r.ret), 1], ['Received', r => n0(r.recv), 1], ['Good', r => `<span style="color:var(--good)">${n0(r.good)}</span>`, 1], ['Hold', r => `<span style="color:var(--warn)">${n0(r.hold)}</span>`, 1], ['Damaged', r => `<span style="color:var(--bad)">${n0(r.dmg)}</span>`, 1], ['Disposed', r => n0(r.disp), 1], ['Return rate', r => r.rate + '%', 1]], rows, null, 'No returns yet.')); }],
+  vasact: ['VAS Activity', 'VAS jobs and quantities by customer and service', () => n0((DB.vas || []).length) + ' work orders', () => {
+    const W = DB.vas || [], g = {}; W.forEach(v => { const k = v.client + '|' + v.svc; (g[k] = g[k] || { id: k, client: v.client, svc: v.svc, n: 0, qty: 0, done: 0, open: 0 }); g[k].n++; g[k].qty += +v.qty || 0; if (v.status === 'Completed') g[k].done += +(v.compQty ?? v.qty) || 0; if (!['Completed', 'Cancelled', 'Rejected'].includes(v.status)) g[k].open++; });
+    return rpK([['Work orders', n0(W.length), 'b'], ['Open', n0(W.filter(v => !['Completed', 'Cancelled', 'Rejected'].includes(v.status)).length), 'o'], ['Completed', n0(W.filter(v => v.status === 'Completed').length), 'g'], ['Units completed', n0(sum(Object.values(g), x => x.done)), 'g']])
+      + card('By customer and service', tbl([['Customer', x => esc(clName(x.client))], ['Service', x => `<span class="mono note">${esc(x.svc || '')}</span> ${esc(svcBy(x.svc).name || '')}`], ['Jobs', x => n0(x.n), 1], ['Requested qty', x => n0(x.qty), 1], ['Completed qty', x => n0(x.done), 1], ['Open jobs', x => x.open ? `<b style="color:var(--warn)">${x.open}</b>` : '0', 1]], Object.values(g), null, 'No VAS work yet.')); }],
+  unbilled: ['Unbilled Charges', 'Charges not yet on a draft invoice, by customer and age', () => 'SAR ' + sar(sum(rpUnbilled(), c => c.amount)) + ' unbilled', () => {
+    const U = rpUnbilled(), B = [['0–30', 0, 30], ['31–60', 31, 60], ['60+', 61, 1e9]], age = c => rpDays(c.at, iso(today));
+    const rows = DB.customers.map(c => { const u = U.filter(x => x.client === c.id); return { id: c.id, c, n: u.length, b: B.map(([, a, z]) => sum(u.filter(x => age(x) >= a && age(x) <= z), x => x.amount)), tot: sum(u, x => x.amount), old: u.length ? Math.max(...u.map(age)) : 0 }; }).filter(r => r.n);
+    return rpK([['Unbilled, SAR', sar(sum(U, c => c.amount)), 'o'], ['Charges', n0(U.length), 'b'], ['Older than 30 days, SAR', sar(sum(U.filter(c => age(c) > 30), c => c.amount)), 'r'], ['Customers', n0(rows.length), 'g']])
+      + card('By customer, SAR excl. VAT', tbl([['Customer', r => esc(r.c.name)], ['Charges', r => n0(r.n), 1], ...B.map((b, i) => [b[0] + ' days', r => r.b[i] ? `<span style="color:${i === 2 ? 'var(--bad)' : i === 1 ? 'var(--warn)' : 'inherit'}">${sar(r.b[i])}</span>` : '—', 1]), ['Total', r => `<b>${sar(r.tot)}</b>`, 1], ['Oldest', r => r.old + ' d', 1], ['', () => '<div class="rowicons"><a class="btn sm" href="#billrun/new">Billing run</a></div>']], rows, null, 'Everything is billed.'))
+      + `<p class="note">Storage is not a charge until a billing run calculates it, so unbilled storage does not appear here. The billing run shows it.</p>`; }],
+  vasbill: ['Completed vs Billed', 'VAS work completed against what has been charged and billed', () => n0((DB.vas || []).filter(v => v.status === 'Completed').length) + ' completed jobs', () => {
+    const rows = (DB.vas || []).filter(v => ['Completed', 'Awaiting verification'].includes(v.status)).slice().reverse(), ch = v => vasCharge(v), T = f => sum(rows, f);
+    return rpK([['Jobs completed', n0(rows.length), 'b'], ['Units completed', n0(T(v => v.compQty || 0)), 'g'], ['Charged, SAR', sar(T(v => (ch(v) || {}).amount || 0)), 'a'], ['In draft invoices, SAR', sar(T(v => { const c = ch(v); return c && chgDraft(c) ? c.amount : 0; })), 'g'], ['Not yet billed, SAR', sar(T(v => { const c = ch(v); return c && bdFree(c) ? c.amount : 0; })), 'o']])
+      + card('VAS jobs', tbl([['Work order', v => `<span class="mono">${esc(v.id)}</span>`], ['Customer', v => esc(clName(v.client))], ['Service', v => esc(svcBy(v.svc).name || v.type)], ['Requested', v => n0(v.qty), 1], ['Completed', v => n0(v.compQty), 1], ['Charged, SAR', v => ch(v) ? sar(ch(v).amount) : '—', 1],
+        ['Billing', v => { const c = ch(v); return !c ? (v.status === 'Awaiting verification' ? '<span class="pill p-warn">Awaiting verification</span>' : '<span class="pill p-bad">Not charged</span>') : chgDraft(c) ? `<span class="pill p-info">${esc(c.bdraft)}</span>` : '<span class="pill p-warn">Unbilled</span>'; }]], rows, v => '#vasw/' + encodeURIComponent(v.id), 'No completed VAS work.')); }],
+  drafts: ['Billing Drafts Status', 'Draft invoices created by billing runs, by customer and period', () => n0((DB.bdrafts || []).filter(d => d.status !== 'Cancelled').length) + ' draft invoices', null, '#bdrafts'],
+  pending: ['Pending Approvals', 'Everything waiting for an approval, across modules', () => n0(rpPending().length) + ' waiting', () => {
+    const R = rpPending(), g = {}; R.forEach(r => g[r.what] = (g[r.what] || 0) + 1);
+    return rpK([['Waiting', n0(R.length), 'o'], ['Oldest, days', R.length ? Math.max(...R.map(r => r.days)) : 0, 'r'], ['Areas', Object.keys(g).length, 'b'], ['Over 3 days', n0(R.filter(r => r.days > 3).length), 'r']])
+      + card(`${R.length} items waiting`, tbl([['Waiting for', r => `<b>${esc(r.what)}</b>`], ['Reference', r => `<span class="mono">${esc(r.ref)}</span>`], ['Customer', r => r.client ? esc(clName(r.client)) : '—'], ['Since', r => fmtDate(r.since)], ['Days waiting', r => r.days > 3 ? `<b style="color:var(--bad)">${r.days}</b>` : r.days, 1], ['', r => `<div class="rowicons"><a class="btn sm pri" href="${esc(r.href)}">Open</a></div>`]], R, null, 'Nothing is waiting for approval.')); }],
+  audit: ['Audit Trail', 'Who did what and when, across all modules', () => 'All modules', () => {
+    const R = rpAudit(), f = FILT.aud || {}, rows = R.filter(r => (!f.area || r.area === f.area) && (!f.client || r.client === f.client) && (!f.q || (r.ref + ' ' + r.what + ' ' + r.by).toLowerCase().includes(f.q.toLowerCase()))).slice(0, 500);
+    return filterBar('aud', [{ id: 'area', label: 'Area', options: optA([...new Set(R.map(r => r.area))].sort()) }, { id: 'client', label: 'Customer', options: custOpts2() }, { id: 'q', type: 'text', label: 'Search reference, action, user' }])
+      + rpK([['Events', n0(R.length), 'b'], ['Today', n0(R.filter(r => String(r.at).slice(0, 10) === iso(today)).length), 'g'], ['Users', n0(new Set(R.map(r => r.by).filter(Boolean)).size), 'a'], ['Areas', n0(new Set(R.map(r => r.area)).size), 'o']])
+      + card(`${rows.length} events${rows.length === 500 ? ' (newest 500)' : ''}`, tbl([['Date', r => esc(String(r.at || '').replace('T', ' ').slice(0, 16))], ['Area', r => esc(r.area)], ['Reference', r => r.href ? `<a class="mono" href="${esc(r.href)}">${esc(r.ref)}</a>` : `<span class="mono">${esc(r.ref)}</span>`], ['Customer', r => r.client ? esc(clName(r.client)) : '—'], ['Action', r => esc(r.what)], ['By', r => esc(r.by || '—')]], rows, null, 'No events match.')); }]
+};
+function rpPending() {
+  const R = [], add = (what, ref, cl, since, href) => R.push({ id: what + ref, what, ref, client: cl, since: String(since || iso(today)).slice(0, 10), days: Math.max(0, rpDays(since || iso(today), iso(today))), href });
+  DB.contracts.filter(k => k.status === 'Pending approval').forEach(k => add('Contract', k.id, k.client, (k.history || []).slice(-1)[0]?.at || k.start, '#contracts/edit/' + k.id));
+  DB.asns.filter(a => a.status === 'Submitted').forEach(a => add('ASN', a.id, a.client, a.created, '#asn/edit/' + a.id));
+  DB.orders.filter(o => o.status === 'Draft').forEach(o => add('Outbound order', o.id, o.client, o.created, '#oborders/edit/' + o.id));
+  (DB.vas || []).filter(v => v.status === 'Rate pending').forEach(v => add('VAS rate', v.id, v.client, v.created, '#vasw/' + v.id));
+  (DB.vas || []).filter(v => v.status === 'Pending approval').forEach(v => add('VAS work order', v.id, v.client, v.created, '#vasw/' + v.id));
+  (DB.vas || []).filter(v => v.status === 'Awaiting verification').forEach(v => add('VAS verification', v.id, v.client, v.completedAt, '#vasw/' + v.id));
+  (DB.returns || []).filter(r => r.status === 'Requested').forEach(r => add('Return (RMA)', r.id, r.client, r.created, '#rma/s1/' + r.id));
+  (DB.adjustments || []).filter(a => a.status === 'Pending').forEach(a => add('Inventory adjustment', a.id, a.client, a.created, '#adjust'));
+  (DB.bruns || []).filter(r => r.status === 'Calculated').forEach(r => add('Billing run', r.id, '', r.created, '#billrun/view/' + r.id));
+  return R.sort((a, b) => b.days - a.days);
+}
+function rpAudit() {
+  const R = [], push = (area, list, href) => (list || []).forEach(x => (x.audit || []).forEach(h => R.push({ at: h.at, by: h.by, area, ref: x.id, client: x.client || '', what: h.action, href: href ? href(x) : '' })));
+  push('ASN / inbound', DB.asns, a => '#asn/edit/' + a.id); push('Outbound order', DB.orders, o => '#oborders/edit/' + o.id); push('Return (RMA)', DB.returns, r => '#rma/s1/' + r.id); push('VAS', DB.vas, v => '#vasw/' + v.id);
+  push('Billing run', DB.bruns, r => '#billrun/view/' + r.id); push('Draft invoice', DB.bdrafts, d => '#bdrafts/view/' + d.id);
+  DB.contracts.forEach(k => (k.history || []).forEach(h => R.push({ at: h.at, by: h.by, area: 'Contract', ref: k.id, client: k.client, what: h.what, href: '#contracts/edit/' + k.id })));
+  M.services.forEach(s => { (s.log || []).forEach(h => R.push({ at: h.at, by: h.by, area: 'Service item', ref: s.code, client: '', what: h.what, href: '#svc/view/' + s.code })); (s.hist || []).forEach(h => R.push({ at: h.at, by: h.by, area: 'Standard rate', ref: s.code, client: '', what: `${sar(h.from)} → ${sar(h.to)} from ${fmtDate(h.eff)}${h.why ? ': ' + h.why : ''}`, href: '#svc/view/' + s.code })); });
+  (DB.adjustments || []).forEach(a => R.push({ at: a.approved || a.created, by: a.by || '', area: 'Inventory adjustment', ref: a.id, client: a.client, what: `${a.status}: ${a.lpn} ${a.before} → ${a.after} (${a.reason})`, href: '#adjust' }));
+  (DB.damages || []).forEach(d => R.push({ at: d.date, by: d.by, area: 'Damage & loss', ref: d.id, client: d.client, what: `${d.type}, ${d.qty} units, liability ${d.liab}, claim ${d.claim}`, href: '#damage' }));
+  (DB.moveOrders || []).forEach(m => R.push({ at: m.done || m.created, by: m.by || '', area: 'Bin move', ref: m.id, client: m.client, what: `${m.status}: ${m.lpn} ${m.from} → ${m.to} (${m.reason})`, href: '#moves' }));
+  (DB.transfers || []).forEach(t => R.push({ at: t.received || t.shipped || t.created, by: '', area: 'Warehouse transfer', ref: t.id, client: '', what: `${t.status}: ${whRec(t.from).name} → ${whRec(t.to).name}, ${t.lines.length} pallets`, href: '#transfers' }));
+  (DB.counts || []).forEach(c => R.push({ at: c.posted || c.created, by: '', area: 'Stock count', ref: c.id, client: '', what: `${c.type} ${c.status.toLowerCase()} · ${c.scope}`, href: '#counts' }));
+  (DB.matMoves || []).forEach(m => R.push({ at: m.at, by: m.by, area: 'VAS material', ref: m.ref || m.code, client: '', what: `${m.type} ${m.qty > 0 ? '+' : ''}${m.qty} ${m.code}`, href: '#materials' }));
+  DB.charges.filter(c => c.manual && !c.sample).forEach(c => R.push({ at: c.at, by: c.by || '', area: 'Manual charge', ref: c.id, client: c.client, what: `${c.type} · SAR ${sar(c.amount)}${c.memo ? ' · ' + c.memo : ''}`, href: '#charges' }));
+  return R.sort((a, b) => String(b.at).localeCompare(String(a.at))).map((r, i) => ({ ...r, id: 'a' + i }));
+}
+
+/* ---- categories (ERP Report Center v4) ---- */
+const RPC = [
+  { k: 'biz', t: 'Business Overview', d: 'Monthly revenue, customer value and warehouse activity at a glance.', c: 'b', r: ['monthly', 'client', 'thru'] },
+  { k: 'cust', t: 'Customer & Contract', d: 'Pallet throughput, contracts, pricing discipline and revenue by customer and service.', c: 'a', r: ['cpt', 'revenue', 'contracts', 'rateexc'] },
+  { k: 'inv', t: 'Inventory', d: 'What is stored, for how long, expiry risk and stock accuracy.', c: 'g', r: ['bal', 'ageing', 'expiry', 'accuracy', 'adjust'] },
+  { k: 'wh', t: 'Warehouse', d: 'Space, inbound, outbound, returns, VAS and service levels.', c: 'o', r: ['occupancy', 'inbound', 'outbound', 'sla', 'returns', 'vasact', 'cpt'] },
+  { k: 'bill', t: 'Billing & Receivables', d: 'Unbilled work, VAS billing and draft invoices.', c: 'r', r: ['unbilled', 'vasbill', 'drafts'] },
+  { k: 'audit', t: 'Activity & Audit', d: 'Approvals waiting and the full activity trail.', c: 'b', r: ['pending', 'audit'] }];
+const RP_CAT = {}; RPC.forEach(g => g.r.forEach(k => { if (!RP_CAT[k]) RP_CAT[k] = g; }));
+const REP_PAGES = ['reports', 'rep', ...RPC.map(g => 'rep-' + g.k)];
+const rpHref = k => REP[k][4] || '#rep/' + k;
+const rpMet = k => { try { return REP[k][2](); } catch (e) { return ''; } };
+let rpQ = '', rpFav = (() => { try { return JSON.parse(localStorage.getItem('gl-rep-fav') || '[]'); } catch (e) { return []; } })();
+const rpSaveFav = () => { try { localStorage.setItem('gl-rep-fav', JSON.stringify(rpFav)); } catch (e) { } };
+const RP_IC = { dash: '<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>', folder: '<path d="M3 7.5A2.5 2.5 0 015.5 5H9l2 2h7.5A2.5 2.5 0 0121 9.5v7a2.5 2.5 0 01-2.5 2.5h-13A2.5 2.5 0 013 16.5z"/>', doc: '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/>', star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.9l-5.3 2.7 1-5.8-4.2-4.1 5.9-.9z"/>' };
+const rpSvg = (k, s = 16, fill) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="${fill ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true">${RP_IC[k]}</svg>`;
+function rpCenter(fk) {
+  const g = RPC.find(x => x.k === fk), all = RPC.flatMap(x => x.r.map(k => ({ k, g: x }))).filter((x, i, a) => a.findIndex(y => y.k === x.k) === i), total = all.length;
+  const list = fk === 'fav' ? all.filter(x => rpFav.includes(x.k)) : g ? g.r.map(k => ({ k, g })) : all, showCat = fk === 'all' || fk === 'fav';
+  const head = fk === 'fav' ? ['Favourites', 'Reports you starred for quick access.', 'o', 'star'] : g ? [g.t + ' reports', g.d, g.c, 'folder'] : ['Report dashboard', 'Key figures for the business, and every report grouped by category.', 'b', 'dash'];
+  const fold = (key, label, n, c, ic) => `<li><a class="rp-f ${fk === key ? 'on' : ''} c-${c}" href="#${key === 'all' ? 'reports' : key === 'fav' ? 'reports/fav' : 'rep-' + key}"><span class="rp-fi">${rpSvg(ic || 'folder', 17, ic === 'star' && fk === 'fav')}</span><span class="rp-fn">${esc(label)}</span><i>${n}</i></a></li>`;
+  const row = ({ k, g: gg }) => { const fav = rpFav.includes(k), R = REP[k];
+    return `<li class="rp-row c-${gg.c}" data-q="${esc((R[0] + ' ' + R[1] + ' ' + gg.t).toLowerCase())}"><button type="button" class="rp-star ${fav ? 'on' : ''}" data-do="rpFav" data-id="${k}" aria-label="${fav ? 'Remove from' : 'Add to'} favourites" title="${fav ? 'Remove from' : 'Add to'} favourites">${rpSvg('star', 16, fav)}</button>
+      <a class="rp-link" href="${rpHref(k)}"><span class="rp-di">${rpSvg('doc', 18)}</span><span class="rp-t"><b>${esc(R[0])}</b><em>${esc(R[1])}</em></span>${showCat ? `<span class="rp-cat">${rpSvg('folder', 13)}${esc(gg.t)}</span>` : ''}<span class="rp-m">${esc(rpMet(k))}</span><span class="rp-go" aria-hidden="true">›</span></a></li>`; };
+  const body = fk === 'all' ? RPC.map(x => `<div class="rp-grp"><span>${rpSvg('folder', 14)}${esc(x.t)}</span><i>${x.r.length}</i></div><ul class="rp-ul">${x.r.map(k => row({ k, g: x })).join('')}</ul>`).join('') : `<ul class="rp-ul">${list.map(row).join('')}</ul>`;
+  const kp = fk === 'all' ? `<div class="grid g-kpi">${[['Units in stock', n0(sum(DB.stock, s => s.qty)), 'bal', 'g'], ['Warehouse occupancy', rpOcc() + '%', 'occupancy', 'o'], ['Fill rate · 30 days', rpFill(rpShip30()) + '%', 'outbound', 'b'], ['Revenue this month, SAR', sar(sum(DB.charges.filter(c => c.at >= iso(today).slice(0, 8) + '01'), c => c.amount)), 'revenue', 'a'], ['Unbilled, SAR', sar(sum(rpUnbilled(), c => c.amount)), 'unbilled', 'r']].map(x => `<a class="card kpi rp-k c-${x[3]}" href="#rep/${x[2]}"><span>${x[0]}</span><b>${x[1]}</b><small>View report →</small></a>`).join('')}</div>` : '';
+  return head2('Reports &amp; Analytics', fk === 'all' ? 'Report dashboard' : esc(head[0])) + kp + `<div class="rp-c">
+    <aside class="rp-side card"><div class="rp-sh">Report category</div><ul class="rp-fl">${fold('all', 'Report dashboard', total, 'b', 'dash')}${fold('fav', 'Favourites', rpFav.length, 'o', 'star')}<li class="rp-sep"></li>${RPC.map(x => fold(x.k, x.t, x.r.length, x.c)).join('')}</ul></aside>
+    <section class="rp-main card"><header class="rp-mh c-${head[2]}"><span class="rp-hi">${rpSvg(head[3], 22)}</span><div><h2>${esc(head[0])}</h2><p>${esc(head[1])}</p></div>
+      <label class="rp-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="rpQ" type="search" placeholder="Search reports" value="${esc(rpQ)}" aria-label="Search reports" autocomplete="off"></label></header>
+      <div id="rpBody">${list.length ? body : `<p class="rp-empty">${fk === 'fav' ? 'No favourites yet. Click the ☆ next to a report to add it here.' : 'No reports.'}</p>`}</div><p class="rp-empty" id="rpNone" hidden>No report matches your search.</p></section></div>`;
+}
+function rpFilter() { const q = rpQ.trim().toLowerCase(); let n = 0; document.querySelectorAll('.rp-row').forEach(li => { const ok = !q || li.dataset.q.includes(q); li.hidden = !ok; if (ok) n++; });
+  document.querySelectorAll('.rp-grp').forEach(h => { const ul = h.nextElementSibling; h.hidden = !!ul && ![...ul.children].some(li => !li.hidden); }); const e = $('#rpNone'); if (e) e.hidden = !!n || !document.querySelector('.rp-row'); }
+document.addEventListener('input', e => { if (e.target.id === 'rpQ') { rpQ = e.target.value; rpFilter(); } });
+function rpReport(k) {
+  const R = REP[k]; if (!R || !R[3]) return head2('Reports &amp; Analytics', 'Report not found', '<a class="btn" href="#reports">← Report dashboard</a>') + '<div class="card empty">This report does not exist.</div>';
+  const g = RP_CAT[k]; CUR = { mod: 'reports', sub: 'rep-' + g.k }; let body;
+  try { body = R[3](); } catch (e) { body = `<div class="err">This report could not be built: ${esc(e.message)}</div>`; }
+  return head2(`<a href="#rep-${g.k}" style="color:inherit">Reports &amp; Analytics · ${esc(g.t)}</a>`, esc(R[0]), `<button type="button" class="btn" data-do="rpFav" data-id="${k}">${rpSvg('star', 15, rpFav.includes(k))} ${rpFav.includes(k) ? 'Favourite' : 'Add to favourites'}</button><button type="button" class="btn" data-do="rpCsv" data-id="${k}">Export CSV</button><button type="button" class="btn" data-do="printPage">Print</button>`)
+    + `<div class="rp-bar"><p class="note" style="margin:0">${esc(R[1])} · as of ${fmtDate(iso(today))}</p><nav class="be-tabs" aria-label="${esc(g.t)} reports">${g.r.map(x => REP[x][4] ? `<a href="${REP[x][4]}" class="rp-tab">${esc(REP[x][0])} ↗</a>` : `<a href="#rep/${x}" class="rp-tab ${x === k ? 'on' : ''}" ${x === k ? 'aria-current="page"' : ''}>${esc(REP[x][0])}</a>`).join('')}</nav></div>
+    <div class="rp-body" style="display:flex;flex-direction:column;gap:16px">${body}</div>`;
+}
+function repShow(page, mode, id) {
+  if (page === 'rep') return rpReport(mode);
+  CUR = { mod: 'reports', sub: page === 'reports' ? 'reports' : page };
+  setTimeout(rpFilter, 0);
+  return rpCenter(page === 'reports' ? (mode === 'fav' ? 'fav' : 'all') : page.slice(4));
+}
+Object.assign(DO, {
+  rpFav(k) { rpFav = rpFav.includes(k) ? rpFav.filter(x => x !== k) : [...rpFav, k]; rpSaveFav(); route(); toast(REP[k][0] + (rpFav.includes(k) ? ' added to' : ' removed from') + ' favourites.'); },
+  rpCsv(k) { const tables = [...document.querySelectorAll('.rp-body table')]; if (!tables.length) return toast('No table on this report.');
+    const rows = []; tables.forEach((t, i) => { if (i) rows.push([]); const h = t.closest('.card') && t.closest('.card').querySelector('.card-h h2'); if (h && tables.length > 1) rows.push([h.innerText.trim()]); t.querySelectorAll('tr').forEach(tr => rows.push([...tr.children].map(c => c.innerText.replace(/\s+/g, ' ').trim()))); });
+    csvDownload(k + '-' + iso(today) + '.csv', rows); },
+  rpQuick(v) { const [key, p] = v.split('|'), t = iso(today), y = today.getFullYear(), m = today.getMonth(), d = (yy, mm, dd) => iso(new Date(yy, mm, dd, 12)), f = FILT[key] = FILT[key] || {};
+    if (p === 'month') { f.from = t.slice(0, 8) + '01'; f.to = t; } else if (p === 'lmonth') { f.from = d(y, m - 1, 1); f.to = d(y, m, 0); } else if (p === 'quarter') { f.from = d(y, Math.floor(m / 3) * 3, 1); f.to = t; } else { f.from = y + '-01-01'; f.to = t; } route(); }
+});
+
+/* =====================================================================
    ROUTER
    #dashboard · #asn-new · #order-new
    #customers[/new | /edit/ID] · #quotes[/new | /edit/ID] · #contracts[/new[/QUOTE] | /edit/ID]
@@ -4437,6 +4710,7 @@ function showPage(page, mode, id) {
   if (['returns', 'rmareq', 'rmarecv', 'rmaclose', 'rma'].includes(page)) return rmaShow(page, mode, id);
   if (['vas', 'vasreq', 'vaswo', 'vasdone', 'vasw'].includes(page)) return vasShow(page, mode, id);
   if (BILL_PAGES.includes(page)) return billShow(page, mode, id);
+  if (REP_PAGES.includes(page)) return repShow(page, mode, id);
   if (page === 'inventory') { history.replaceState(null, '', '#stock'); return invShow('stock'); }
   if (page === 'customers') { CUR = { mod: 'clients', sub: page };
     if (mode === 'new') return customerForm('');
@@ -4513,7 +4787,8 @@ const openFor = () => { const p = location.hash.slice(1).split('/')[0];
   if (p === 'inventory' || INV_PAGES.includes(p)) openMods.add('inventory');
   if (['returns', 'rmareq', 'rmarecv', 'rmaclose', 'rma'].includes(p)) openMods.add('returns');
   if (['vas', 'vasreq', 'vaswo', 'vasdone', 'vasw'].includes(p)) openMods.add('vas');
-  if (BILL_PAGES.includes(p)) openMods.add('billing'); };
+  if (BILL_PAGES.includes(p)) openMods.add('billing');
+  if (REP_PAGES.includes(p)) openMods.add('reports'); };
 window.addEventListener('hashchange', () => {
   openFor();
   closeModal(true);

@@ -43,6 +43,9 @@ Single self-contained HTML file — no build step.
 | `#charges` · `#charges/new` · `#storage` | Charges register, manual charge, storage capture |
 | `#billrun` · `#billrun/new` · `#billrun/view/ID` | Billing runs: run → review & approve → send |
 | `#bdrafts` · `#bdrafts/view/ID` · `#billexc` | Draft invoices and billing exceptions |
+| `#reports` · `#reports/fav` | Report dashboard (key figures, every report by category, search, favourites) |
+| `#rep-biz` · `#rep-cust` · `#rep-inv` · `#rep-wh` · `#rep-bill` · `#rep-audit` | Report categories |
+| `#rep/KEY` (e.g. `#rep/monthly`, `#rep/cpt`, `#rep/audit`) | One report, with CSV export and print |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
