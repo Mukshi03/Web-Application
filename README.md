@@ -36,6 +36,8 @@ Single self-contained HTML file — no build step.
 | `#returns` · `#rma/new` | Returns (RMA) dashboard and new RMA request |
 | `#rmareq` · `#rmarecv` · `#rmaclose` | RMA Request, Receive & Inspect, Reconcile & Close queues |
 | `#rma/s1/RMA-JED-00001` (`s2`, `s3`) | One return at step 1, 2 or 3 |
+| `#vas` · `#vasreq` · `#vaswo` · `#vasdone` | VAS dashboard, requests, work orders, completion & verification |
+| `#vasreq/new` · `#vasreq/edit/VAS-JED-00001` · `#vasw/VAS-JED-00001` | New / draft VAS request, and one work order |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
