@@ -33,6 +33,9 @@ Single self-contained HTML file — no build step.
 | `#moves[/new]` · `#transfers[/new]` | Bin moves inside a warehouse; warehouse transfers (draft → ship → receive → put-away) |
 | `#counts[/new]` · `#adjust[/new]` · `#damage[/new]` | Cycle and full stock counts (freezes the warehouse), adjustments with approval, damage & loss register |
 | `#ledger` · `#ageing` · `#statement` | Stock ledger, stock ageing by customer, customer stock statement (opening → closing) |
+| `#returns` · `#rma/new` | Returns (RMA) dashboard and new RMA request |
+| `#rmareq` · `#rmarecv` · `#rmaclose` | RMA Request, Receive & Inspect, Reconcile & Close queues |
+| `#rma/s1/RMA-JED-00001` (`s2`, `s3`) | One return at step 1, 2 or 3 |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
