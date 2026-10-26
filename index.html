@@ -94,6 +94,47 @@ th.num,td.num{text-align:right}
 .chart{width:100%;height:auto}.chart text{fill:var(--muted);font-size:11px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 5px 0 10px;vertical-align:-1px}
 
+/* forms (ported from lanewms ibForm) */
+input,select,textarea{font:inherit;color:inherit}
+.field{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--fg-2);min-width:0}
+.field input,.field select{width:100%;height:36px;border:1px solid var(--line);border-radius:8px;padding:0 10px;background:var(--surface);color:var(--fg);font-size:13.5px;min-width:0}
+.field input:focus,.field select:focus,.sd-lines input:focus,.sd-lines textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.flbl{font-weight:600;color:var(--fg)}.req{color:var(--bad);font-weight:600}
+.ro-in{background:var(--surface-2)!important;color:var(--muted)!important;cursor:default}
+.fgrid{display:grid;gap:12px 14px}.fgrid.f3{grid-template-columns:repeat(3,minmax(0,1fr))}.fgrid .span2{grid-column:span 2}
+@media(max-width:900px){.fgrid.f3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.fgrid.f3{grid-template-columns:1fr}.fgrid .span2{grid-column:auto}}
+.card-h .note{margin:2px 0 0}
+.err{color:var(--bad);background:var(--bad-soft);border:1px solid var(--bad);border-radius:8px;padding:10px 14px;font-size:13px}.err:empty{display:none}
+.ib-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.ib-bar>span{padding:3px 9px;border-radius:999px;background:var(--surface-2);color:var(--muted)}
+.ib-bar>span.cur{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.ib-bar>i{color:var(--muted);font-style:normal}
+.ib-bar>.ib-meta{margin-left:auto;display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;padding:0;background:none;color:var(--fg-2)}
+@media(max-width:600px){.ib-bar>.ib-meta{margin-left:0}}
+table.sd-lines{min-width:880px}
+table.sd-lines td{vertical-align:top;padding:10px 6px}
+table.sd-lines th{padding:8px 6px}
+table.sd-lines input{width:100%;height:36px;border:1px solid var(--line);border-radius:8px;padding:0 10px;background:var(--surface);color:var(--fg);font-size:13px;min-width:0}
+table.sd-lines input.num{text-align:right}
+table.sd-lines td.pad{padding-top:19px}
+.ib-codecell{display:inline-block;padding-top:9px}
+.ib-item{display:flex;gap:12px;align-items:flex-start;padding:2px 0}
+.ib-thumb{flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;color:var(--faint);background:var(--surface-2)}
+.ib-item-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.ib-item-top,.ib-itemcard{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ib-itemcard{min-height:36px}
+.ib-item-top b{font-size:13.5px;letter-spacing:.01em}
+.ib-item textarea{width:100%;min-height:52px;resize:vertical;font-size:13px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--fg)}
+.ib-item textarea:focus{background:var(--surface)}
+.ib-tag{align-self:flex-start;background:var(--accent);color:var(--accent-ink);font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:2px 7px;border-radius:4px}
+.ib-round{flex:none;width:24px;height:24px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);display:inline-grid;place-items:center;cursor:pointer;font-size:14px;line-height:1;padding:0}
+.ib-round:hover{border-color:var(--accent);color:var(--accent)}
+.icon-btn.del:hover{border-color:var(--bad);color:var(--bad)}
+.form-foot{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.btn.danger{color:var(--bad)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:13px;box-shadow:var(--shadow);z-index:50;max-width:calc(100% - 32px)}
+
 @media (max-width:900px){
   .side{position:fixed;left:0;top:0;z-index:15;transform:translateX(-105%);transition:transform .2s;box-shadow:var(--shadow)}
   .side.show{transform:none}
@@ -201,7 +242,38 @@ const DATA = {
     { id: 'OB-RUH-00004', customer: 'Najd Electronics', shipTo: 'eXtra Riyadh Olaya', warehouse: 'Riyadh Ambient', lines: 1, units: 10, due: iso(addDays(today, 1)), status: 'Allocated' },
     { id: 'OB-JED-00057', customer: 'Souq Style', shipTo: 'Online customer', warehouse: 'Jeddah Ambient', lines: 2, units: 21, due: iso(addDays(today, 1)), status: 'Picking' },
     { id: 'OB-JED-00056', customer: 'Hijaz Pharma', shipTo: 'Nahdi Pharmacy DC', warehouse: 'Jeddah Ambient', lines: 1, units: 40, due: iso(addDays(today, 1)), status: 'Picked' }
-  ]
+  ],
+
+  // Master data used by the New ASN and Outbound Order forms
+  master: {
+    customers: [
+      { id: 'CL-001', name: 'Red Sea Foods' }, { id: 'CL-002', name: 'Najd Electronics' },
+      { id: 'CL-003', name: 'Hijaz Pharma' }, { id: 'CL-004', name: 'Souq Style' }
+    ],
+    warehouses: [
+      { id: 'WH-JED-01', name: 'Jeddah Ambient', loc: 'JED' }, { id: 'WH-JED-02', name: 'Jeddah Chilled', loc: 'JED' },
+      { id: 'WH-JED-03', name: 'Jeddah Frozen', loc: 'JED' }, { id: 'WH-RUH-01', name: 'Riyadh Ambient', loc: 'RUH' }
+    ],
+    items: [
+      ['RSF-RICE-5K', 'CL-001', 'Basmati rice 5 kg', 'Carton'], ['RSF-OIL-1L', 'CL-001', 'Sunflower oil 1 L × 12', 'Carton'],
+      ['RSF-LAB-500', 'CL-001', 'Labneh 500 g × 6', 'Carton'], ['RSF-SHR-1K', 'CL-001', 'Frozen shrimp 1 kg × 10', 'Carton'],
+      ['NJE-TV-55', 'CL-002', '55" LED TV', 'Unit'], ['NJE-AC-18', 'CL-002', 'Split AC 18,000 BTU', 'Unit'],
+      ['NJE-PHN-A5', 'CL-002', 'Smartphone A5 (carton of 20)', 'Carton'], ['HJP-INS-10', 'CL-003', 'Insulin pens × 10', 'Box'],
+      ['HJP-PAR-24', 'CL-003', 'Paracetamol 500 mg × 24', 'Carton'], ['SQS-ABY-M', 'CL-004', 'Abaya, black, size M', 'Piece'],
+      ['SQS-THB-L', 'CL-004', 'Thobe, white, size L', 'Piece'], ['SQS-SHL-01', 'CL-004', 'Shemagh, red check', 'Piece']
+    ].map(([sku, client, name, uom], i) => ({ sku, client, name, uom, code: 'GL-' + (101 + i), custCode: sku, kind: 'Goods' })),
+    // units free to allocate, by warehouse and SKU
+    stock: {
+      'WH-JED-01': { 'RSF-RICE-5K': 240, 'RSF-OIL-1L': 180, 'NJE-TV-55': 36, 'NJE-AC-18': 20, 'NJE-PHN-A5': 40, 'HJP-PAR-24': 150, 'SQS-ABY-M': 60, 'SQS-THB-L': 45, 'SQS-SHL-01': 80 },
+      'WH-JED-02': { 'RSF-LAB-500': 90, 'HJP-INS-10': 200 },
+      'WH-JED-03': { 'RSF-SHR-1K': 70 },
+      'WH-RUH-01': { 'NJE-TV-55': 12, 'NJE-PHN-A5': 30, 'SQS-ABY-M': 25 }
+    },
+    orderTypes: ['Customer dispatch', 'Transfer order', 'Return to vendor'],
+    priorities: ['Normal', 'High', 'Urgent']
+  },
+  // next document numbers
+  numbering: { nextAsn: 104, nextOb: { JED: 62, RUH: 5 } }
 };
 
 /* =====================================================================
@@ -213,8 +285,8 @@ const n0 = v => Number(v || 0).toLocaleString('en-US');
 const sar = v => Number(v || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const sum = (a, f) => a.reduce((t, x) => t + (f ? f(x) : x), 0);
 const fmtDate = d => d ? new Date(d + 'T00:00:00').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '—';
-const TONE = { High: 'bad', Medium: 'warn', Info: 'info', New: 'mute', Allocated: 'info', Picking: 'warn', Picked: 'warn', Dispatched: 'info', Delivered: 'good', Cancelled: 'mute' };
-const pill = s => `<span class="pill p-${TONE[s] || 'mute'}">${esc(s)}</span>`;
+const TONE = { High: 'bad', Medium: 'warn', Info: 'info', Draft: 'mute', Submitted: 'info', Available: 'good', 'Enter qty': 'warn', New: 'mute', Allocated: 'info', Picking: 'warn', Picked: 'warn', Dispatched: 'info', Delivered: 'good', Cancelled: 'mute' };
+const pill = s => `<span class="pill p-${TONE[s] || (/^Short/.test(s) ? 'bad' : 'mute')}">${esc(s)}</span>`;
 const card = (title, body, extra = '') => `<section class="card"><div class="card-h"><h2>${title}</h2><div class="row">${extra}</div></div>${body}</section>`;
 const isLate = o => ['New', 'Allocated', 'Picking', 'Picked'].includes(o.status) && o.due < iso(today);
 
@@ -294,23 +366,302 @@ function recentOrders(d) {
 /* =====================================================================
    RENDER
    ===================================================================== */
-function render(d) {
-  $('#companyName').textContent = d.company;
-  const initials = d.user.name.split(/\s+/).map(x => x[0]).join('').slice(0, 2).toUpperCase();
-  $('#userBox').innerHTML = `<span class="avatar">${esc(initials)}</span><div><b>${esc(d.user.name)}</b><small>${esc(d.user.role)}</small></div>`;
-  $('#view').innerHTML = `
+function dashboard(d) {
+  return `
     <div class="head"><div><div class="crumb">Dashboard</div><h1>Operations Dashboard</h1></div>
-      <div class="actions"><a class="btn" href="#inbound">+ New ASN</a><a class="btn pri" href="#outbound">+ Outbound order</a></div></div>
+      <div class="actions"><a class="btn" href="#asn-new">+ New ASN</a><a class="btn pri" href="#order-new">+ Outbound order</a></div></div>
     ${kpis(d)}
     <section class="grid g-2">${flowChart(d)}${workQueue(d)}</section>
     <section class="grid g-3">${alerts(d)}${occupancy(d)}${billing(d)}</section>
     ${recentOrders(d)}`;
 }
 
+/* =====================================================================
+   SAVED RECORDS
+   ASNs and orders created in the forms. Kept in this browser only
+   (localStorage) until the app has a backend; then POST them instead.
+   ===================================================================== */
+const STORE_KEY = 'graylane.web.v1';
+const ST = (() => { try { return JSON.parse(localStorage.getItem(STORE_KEY)); } catch (e) { return null; } })()
+  || { asns: [], orders: [], nextAsn: DATA.numbering.nextAsn, nextOb: { ...DATA.numbering.nextOb } };
+const persist = () => { try { localStorage.setItem(STORE_KEY, JSON.stringify(ST)); } catch (e) { /* storage unavailable */ } };
+
+const M = DATA.master;
+const clName = id => (M.customers.find(c => c.id === id) || {}).name || '';
+const whRec = id => M.warehouses.find(w => w.id === id) || {};
+const item = sku => M.items.find(i => i.sku === sku) || {};
+const itemsOf = cl => M.items.filter(i => i.client === cl);
+const avail = (w, sku) => (M.stock[w] || {})[sku] || 0;
+const custOpts = () => M.customers.map(c => [c.id, c.name]);
+const whOpts = () => M.warehouses.map(w => [w.id, w.name]);
+const opt = (list, v) => list.map(([k, l]) => `<option value="${esc(k)}"${k === v ? ' selected' : ''}>${esc(l)}</option>`).join('');
+
+// dashboard figures plus anything saved from the forms
+function withSaved(d) {
+  const mine = ST.orders.filter(o => o.status !== 'Draft').slice().reverse().map(o => ({
+    id: o.id, customer: clName(o.client), shipTo: o.customer, warehouse: whRec(o.wh).name,
+    lines: o.lines.filter(l => l.sku).length, units: sum(o.lines, l => +l.qty || 0), due: o.due, status: o.status }));
+  const add = { 'ASNs expected': ST.asns.filter(a => a.status === 'Submitted').length, 'Orders to allocate': ST.orders.filter(o => o.status === 'New').length };
+  return { ...d, orders: [...mine, ...d.orders].slice(0, 6), queue: d.queue.map(q => ({ ...q, open: q.open + (add[q.task] || 0) })) };
+}
+
+/* =====================================================================
+   FORM HELPERS (same building blocks as the ERP's inbound/outbound forms)
+   ===================================================================== */
+const fld = (label, html, req, cls = '') => `<label class="field ${cls}"><span class="flbl">${label}${req ? '<span class="req"> *</span>' : ''}</span>${html}</label>`;
+const inp = (name, v, { type = 'text', ph = '', cls = '' } = {}) => `<input name="${name}" type="${type}" value="${esc(v)}" class="${cls}"${ph ? ` placeholder="${esc(ph)}"` : ''}>`;
+const sel = (name, opts, v) => `<select name="${name}">${opt(opts, v)}</select>`;
+const ro = (label, v) => fld(label, `<input value="${esc(v)}" readonly tabindex="-1" class="ro-in">`);
+const sec = (title, body, sub) => `<section class="card"><div class="card-h"><div><h2>${title}</h2>${sub ? `<p class="note">${sub}</p>` : ''}</div></div>${body}</section>`;
+const stepBar = (steps, meta) => `<div class="ib-bar">${steps.map((s, j) => `<span class="${j ? '' : 'cur'}">${s}</span>`).join('<i>›</i>')}<span class="ib-meta">${meta}</span></div>`;
+const foot = list => `<div class="form-foot">${list.map(([l, act, cls]) => `<button type="button" class="btn ${cls || ''}" data-act="${act}">${l}</button>`).join('')}</div>`;
+const IMG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-7 7"/></svg>';
+const TRASH = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>';
+const delBtn = i => `<button type="button" class="icon-btn del" data-act="delLine" data-id="${i}" aria-label="Remove line" title="Remove line">${TRASH}</button>`;
+const datalists = cl => { const its = itemsOf(cl);
+  return `<datalist id="dlCode">${its.map(x => `<option value="${esc(x.code)}">${esc(x.name)} · ${esc(x.custCode)}</option>`).join('')}</datalist>
+    <datalist id="dlName">${its.map(x => `<option value="${esc(x.name)}">${esc(x.code)} · ${esc(x.custCode)}</option>`).join('')}</datalist>
+    <datalist id="dlCust">${its.map(x => `<option value="${esc(x.custCode)}">${esc(x.code)} · ${esc(x.name)}</option>`).join('')}</datalist>`; };
+const searchCells = () => `<td><input type="hidden" data-l="sku" value=""><input data-l="code" list="dlCode" placeholder="Search code" class="mono" autocomplete="off" aria-label="Item code"></td>
+  <td><input data-l="name" list="dlName" placeholder="Type or search item name" autocomplete="off" aria-label="Item name"></td>
+  <td><input data-l="cust" list="dlCust" placeholder="Search cust. code" class="mono" autocomplete="off" aria-label="Customer item code"></td>`;
+const qtyIn = l => `<input data-l="qty" type="number" min="1" step="1" value="${esc(l.qty)}" class="num" aria-label="Quantity">`;
+const pageHead = (crumb, title) => `<div class="head"><div><div class="crumb">${crumb}</div><h1>${title}</h1></div><div class="actions"><a class="btn" href="#dashboard">← Dashboard</a></div></div>`;
+const blankLine = () => ({ sku: '', qty: '', desc: '' });
+
+/* =====================================================================
+   NEW ASN  (ERP: Inbound › ASN)
+   ===================================================================== */
+let draft = null;
+const newAsn = () => ({ kind: 'asn', saved: false, id: 'ASN-' + ST.nextAsn, status: 'Draft', created: iso(today),
+  client: M.customers[0].id, ref: '', eta: iso(addDays(today, 1)), slot: '', wh: M.warehouses[0].id,
+  shipment: '', container: '', carrier: '', vehicle: '', driver: '', driverId: '', mobile: '', remarks: '', lines: [blankLine()] });
+
+function asnLine(l, i) {
+  if (!l.sku) return `<tr class="ib-ln" data-i="${i}"><td class="num pad note">${i + 1}</td>${searchCells()}<td>${qtyIn(l)}</td><td class="pad"><span class="note">Auto</span></td><td>${delBtn(i)}</td></tr>`;
+  const it = item(l.sku);
+  return `<tr class="ib-ln" data-i="${i}"><td class="num pad note">${i + 1}</td>
+    <td><b class="mono ib-codecell">${esc(it.code)}</b><input type="hidden" data-l="sku" value="${esc(l.sku)}"></td>
+    <td><div class="ib-item"><div class="ib-thumb">${IMG}</div><div class="ib-item-main">
+      <div class="ib-item-top"><b>${esc(it.name.toUpperCase())}</b><button type="button" class="ib-round" data-act="clearItem" data-id="${i}" aria-label="Change item" title="Change item">×</button></div>
+      <textarea data-l="desc" rows="2" placeholder="Add a description to your item">${esc(l.desc)}</textarea>
+      <span class="ib-tag">${esc(it.kind.toUpperCase())}</span></div></div></td>
+    <td class="mono pad">${esc(it.custCode)}</td><td>${qtyIn(l)}</td><td class="pad">${esc(it.uom)}</td><td>${delBtn(i)}</td></tr>`;
+}
+
+function asnPage(a) {
+  return `${pageHead('Inbound · ASN', 'ASN · ' + esc(a.id))}
+  ${stepBar(['ASN', 'Gate entry', 'Receiving', 'QC', 'GRN', 'Put-away', 'Completed'], `<b class="mono">${esc(a.id)}</b> · ${esc(clName(a.client))} · ${esc(whRec(a.wh).name)} · ${pill(a.status)}`)}
+  <div class="err" id="ibErr" role="alert"></div>
+  <form id="ibForm" onsubmit="return false" style="display:flex;flex-direction:column;gap:14px">
+  ${sec('Inbound booking / ASN', `<div class="card-b fgrid f3">
+    ${ro('ASN No.', a.id)}
+    ${fld('Customer', sel('client', custOpts(), a.client), 1)}
+    ${fld('Customer Ref.', inp('ref', a.ref, { ph: 'Customer’s own reference' }))}
+    ${fld('Expected arrival date', inp('eta', a.eta, { type: 'date' }), 1)}
+    ${fld('Expected arrival time', inp('slot', a.slot, { type: 'time' }))}
+    ${fld('Warehouse', sel('wh', whOpts(), a.wh), 1)}
+    ${fld('Shipment No.', inp('shipment', a.shipment, { cls: 'mono' }))}
+    ${fld('Container No.', inp('container', a.container, { cls: 'mono', ph: 'e.g. MSKU1234567' }))}
+    ${fld('Carrier', inp('carrier', a.carrier))}
+    ${fld('Vehicle No.', inp('vehicle', a.vehicle, { cls: 'mono' }), 1)}
+    ${fld('Driver name', inp('driver', a.driver), 1)}
+    ${fld('Driver ID / Iqama', inp('driverId', a.driverId, { cls: 'mono' }), 1)}
+    ${fld('Driver mobile', inp('mobile', a.mobile, { type: 'tel', ph: '+966 5X XXX XXXX' }), 1)}
+    ${fld('Remarks', inp('remarks', a.remarks, { ph: 'Optional note' }), 0, 'span2')}</div>`)}
+  ${sec('Expected item lines', `<div class="card-b"><div class="tbl-wrap"><table class="sd-lines"><thead><tr><th class="num" style="width:50px">S.No</th><th style="width:150px">Item code</th><th style="min-width:320px">Item name</th><th style="width:170px">Cust. item code</th><th class="num" style="width:130px">Expected qty</th><th style="width:90px">UOM</th><th style="width:44px"></th></tr></thead>
+    <tbody>${a.lines.map(asnLine).join('')}</tbody></table></div>${datalists(a.client)}
+    <button type="button" class="btn sm" data-act="addLine" style="margin-top:10px">+ Add line</button></div>`,
+    'Search by item code or name. Customer item code and UOM come from the item master; batch, MFG and expiry are captured at receiving.')}
+  </form>
+  ${foot([['Delete draft', 'deleteDraft', 'danger'], ['Save draft', 'saveDraft'], ['Submit ASN', 'submitAsn', 'pri']])}`;
+}
+
+function validateAsn(a) {
+  if (!a.client) throw new Error('Choose the customer.');
+  if (!a.eta) throw new Error('Enter the expected arrival date.');
+  if (!whRec(a.wh).id) throw new Error('Choose the warehouse.');
+  [['vehicle', 'Vehicle No'], ['driver', 'Driver name'], ['driverId', 'Driver ID / Iqama'], ['mobile', 'Driver mobile']]
+    .forEach(([f, l]) => { if (!a[f]) throw new Error('Enter the ' + l + '. It is required.'); });
+  if (a.mobile && !/^[+0-9 ()-]{7,}$/.test(a.mobile)) throw new Error('Driver mobile does not look like a phone number.');
+  if (!a.lines.length) throw new Error('Add at least one item line.');
+  a.lines.forEach((l, i) => { const n = 'Line ' + (i + 1) + ': ';
+    if (!l.sku) throw new Error(n + 'choose the item.');
+    if (item(l.sku).client !== a.client) throw new Error(n + item(l.sku).code + ' belongs to another customer.');
+    if (!(l.qty > 0) || !Number.isInteger(l.qty)) throw new Error(n + 'expected quantity must be a whole number above 0.'); });
+}
+
+/* =====================================================================
+   NEW OUTBOUND ORDER  (ERP: Outbound › Customer Orders)
+   ===================================================================== */
+const obNo = w => { const loc = whRec(w).loc || 'JED'; return 'OB-' + loc + '-' + String(ST.nextOb[loc] || 1).padStart(5, '0'); };
+const newOrder = () => { const w = M.warehouses[0].id;
+  return { kind: 'order', saved: false, id: obNo(w), status: 'Draft', type: M.orderTypes[0], odate: iso(today), client: M.customers[0].id, ref: '', wh: w,
+    priority: 'Normal', due: iso(addDays(today, 1)), customer: '', address: '', contact: '', phone: '', lines: [blankLine()] }; };
+const lineCheck = (o, l) => { const av = avail(o.wh, l.sku); return !l.sku ? '' : !(+l.qty > 0) ? 'Enter qty' : +l.qty > av ? 'Short ' + n0(+l.qty - av) : 'Available'; };
+
+function orderLine(o, l, i) {
+  if (!l.sku) return `<tr class="ib-ln" data-i="${i}"><td class="num pad note">${i + 1}</td>${searchCells()}<td class="num pad">—</td><td>${qtyIn(l)}</td><td class="pad"><span class="note">Auto</span></td><td></td><td>${delBtn(i)}</td></tr>`;
+  const it = item(l.sku), v = lineCheck(o, l);
+  return `<tr class="ib-ln" data-i="${i}"><td class="num pad note">${i + 1}</td>
+    <td><b class="mono ib-codecell">${esc(it.code)}</b><input type="hidden" data-l="sku" value="${esc(l.sku)}"></td>
+    <td><div class="ib-itemcard"><b>${esc(it.name)}</b><button type="button" class="ib-round" data-act="clearItem" data-id="${i}" aria-label="Change item" title="Change item">×</button></div></td>
+    <td class="mono pad">${esc(it.custCode)}</td><td class="num pad">${n0(avail(o.wh, l.sku))}</td><td>${qtyIn(l)}</td><td class="pad">${esc(it.uom)}</td>
+    <td class="pad vcell">${v ? pill(v) : ''}</td><td>${delBtn(i)}</td></tr>`;
+}
+
+function orderPage(o) {
+  return `${pageHead('Outbound · Customer Orders', 'Outbound Order · ' + esc(o.id))}
+  ${stepBar(['Outbound Order', 'Allocate Stock', 'Pick &amp; Confirm', 'Load', 'Confirm Dispatch', 'Completed'], `<b class="mono">${esc(o.id)}</b> · ${esc(clName(o.client))} · ${esc(whRec(o.wh).name)} · ${pill(o.status)}`)}
+  <div class="err" id="ibErr" role="alert"></div>
+  <form id="ibForm" onsubmit="return false" style="display:flex;flex-direction:column;gap:14px">
+  ${sec('Outbound Order', `<div class="card-b fgrid f3">
+    ${ro('Order No.', o.id)}
+    ${fld('Order type', sel('type', M.orderTypes.map(x => [x, x]), o.type))}
+    ${fld('Order date', inp('odate', o.odate, { type: 'date' }), 1)}
+    ${fld('Customer / stock owner', sel('client', custOpts(), o.client), 1)}
+    ${fld('Customer Ref.', inp('ref', o.ref, { ph: 'Customer PO / order no.' }))}
+    ${fld('Warehouse', sel('wh', whOpts(), o.wh), 1)}
+    ${fld('Priority', sel('priority', M.priorities.map(x => [x, x]), o.priority))}
+    ${fld('Requested dispatch date', inp('due', o.due, { type: 'date' }), 1)}
+    ${fld('Ship to (consignee)', inp('customer', o.customer), 1)}
+    ${fld('Delivery address', inp('address', o.address), 1, 'span2')}
+    ${fld('Contact person', inp('contact', o.contact))}
+    ${fld('Contact phone', inp('phone', o.phone, { type: 'tel' }))}</div>`)}
+  ${sec('Order lines', `<div class="card-b"><div class="tbl-wrap"><table class="sd-lines"><thead><tr><th class="num" style="width:50px">S.No</th><th style="width:140px">Item code</th><th style="min-width:240px">Item name</th><th style="width:160px">Cust. item code</th><th class="num" style="width:90px">Available</th><th class="num" style="width:120px">Order qty</th><th style="width:90px">UOM</th><th style="width:130px">Validation</th><th style="width:44px"></th></tr></thead>
+    <tbody>${o.lines.map((l, i) => orderLine(o, l, i)).join('')}</tbody></table></div>${datalists(o.client)}
+    <button type="button" class="btn sm" data-act="addLine" style="margin-top:10px">+ Add line</button></div>`,
+    'Available = this customer’s stock in the warehouse that is free to allocate (available status, not reserved, not blocked).')}
+  </form>
+  ${foot([['Delete draft', 'deleteDraft', 'danger'], ['Save draft', 'saveDraft'], ['Approve &amp; release', 'approveOrder', 'pri']])}`;
+}
+
+function validateOrder(o) {
+  if (!o.client) throw new Error('Choose the customer.');
+  if (!whRec(o.wh).id) throw new Error('Choose the warehouse.');
+  if (!o.customer) throw new Error('Enter the ship-to (consignee) name.');
+  if (!o.address) throw new Error('Enter the delivery address.');
+  if (!o.due) throw new Error('Enter the requested dispatch date.');
+  if (o.phone && !/^[+0-9 ()-]{7,}$/.test(o.phone)) throw new Error('Contact phone does not look like a phone number.');
+  const ls = o.lines.filter(l => l.sku);
+  if (!ls.length) throw new Error('Add at least one item line.');
+  if (o.lines.some(l => !l.sku)) throw new Error('Choose an item on every line or remove the empty line.');
+  ls.forEach((l, i) => {
+    if (item(l.sku).client !== o.client) throw new Error('Line ' + (i + 1) + ': ' + item(l.sku).code + ' belongs to another customer.');
+    if (!(l.qty > 0) || !Number.isInteger(l.qty)) throw new Error('Line ' + (i + 1) + ': order quantity must be a whole number above 0.'); });
+  const dup = ls.map(l => l.sku).find((s, i, a) => a.indexOf(s) !== i);
+  if (dup) throw new Error(item(dup).code + ' is on two lines. Combine them into one line.');
+}
+
+/* =====================================================================
+   FORM BEHAVIOUR
+   ===================================================================== */
+function readForm() {
+  const fm = $('#ibForm'); if (!fm || !draft) return;
+  fm.querySelectorAll('[name]').forEach(el => { draft[el.name] = el.value.trim(); });
+  draft.lines = [...fm.querySelectorAll('.ib-ln')].map(r => {
+    const g = k => { const el = r.querySelector(`[data-l="${k}"]`); return el ? el.value.trim() : ''; };
+    const q = g('qty'); return { sku: g('sku'), qty: q === '' ? '' : (+q || 0), desc: g('desc') };
+  });
+}
+function renderForm(focus) {
+  $('#view').innerHTML = draft.kind === 'asn' ? asnPage(draft) : orderPage(draft);
+  if (focus) { const el = $(focus); if (el) el.focus(); }
+}
+function showErr(msg) { const e = $('#ibErr'); e.textContent = msg; e.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+function toast(msg) { const t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
+
+function store() {   // insert or update the draft in saved records
+  if (!draft.saved) {
+    if (draft.kind === 'asn') ST.nextAsn++; else { const loc = whRec(draft.wh).loc; ST.nextOb[loc] = (ST.nextOb[loc] || 1) + 1; }
+    draft.saved = true;
+  }
+  const list = draft.kind === 'asn' ? ST.asns : ST.orders, rec = { ...draft }, i = list.findIndex(x => x.id === rec.id);
+  delete rec.kind; delete rec.saved;
+  if (i >= 0) list[i] = rec; else list.push(rec);
+  persist();
+}
+function leave(msg) { draft = null; location.hash = '#dashboard'; toast(msg); }
+
+const ACT = {
+  addLine() { readForm(); draft.lines.push(blankLine()); renderForm(`[data-i="${draft.lines.length - 1}"] [data-l="code"]`); },
+  delLine(i) { readForm(); draft.lines.splice(+i, 1); if (!draft.lines.length) draft.lines.push(blankLine()); renderForm(); },
+  clearItem(i) { readForm(); draft.lines[+i].sku = ''; renderForm(`[data-i="${i}"] [data-l="code"]`); },
+  saveDraft() { readForm(); store(); renderForm(); toast(draft.id + ': Draft saved.'); },
+  deleteDraft() {
+    const id = draft.id, was = draft.saved;
+    if (was) { const k = draft.kind === 'asn' ? 'asns' : 'orders'; ST[k] = ST[k].filter(x => x.id !== id); persist(); }
+    leave(was ? id + ' deleted.' : 'Draft discarded.');
+  },
+  submitAsn() {
+    readForm();
+    try { validateAsn(draft); } catch (e) { return showErr(e.message); }
+    draft.status = 'Submitted'; store(); leave(draft.id + ' submitted. It is now waiting for approval.');
+  },
+  approveOrder() {
+    readForm();
+    try { validateOrder(draft); } catch (e) { return showErr(e.message); }
+    const o = draft, sh = o.lines.filter(l => l.qty > avail(o.wh, l.sku)).length;
+    o.status = 'New'; o.approvedBy = DATA.user.name; o.approvedAt = iso(today); store();
+    leave(o.id + ' approved.' + (sh ? ' ' + sh + (sh === 1 ? ' line exceeds' : ' lines exceed') + ' available stock — allocation will be partial.' : ' It is now in Stock Allocation.'));
+  }
+};
+
+// pick an item from the code / name / customer-code search boxes
+function pickItem(t, strict) {
+  const v = t.value.trim(); if (!v) return;
+  const k = v.split(' · ')[0].toLowerCase();
+  const it = itemsOf(draft.client).find(x => x.code.toLowerCase() === k || x.name.toLowerCase() === v.toLowerCase() || x.sku.toLowerCase() === k || x.custCode.toLowerCase() === k);
+  if (!it) { if (strict) { t.value = ''; toast('No item matches "' + v + '" for ' + clName(draft.client) + '.'); } return; }
+  const i = +t.closest('.ib-ln').dataset.i;
+  readForm(); draft.lines[i].sku = it.sku; renderForm(`[data-i="${i}"] [data-l="qty"]`);
+}
+
+$('#view').addEventListener('click', e => {
+  const b = e.target.closest('[data-act]');
+  if (b && draft && ACT[b.dataset.act]) ACT[b.dataset.act](b.dataset.id);
+});
+$('#view').addEventListener('input', e => {
+  if (draft && ['code', 'name', 'cust'].includes(e.target.dataset.l) && (!e.inputType || e.inputType === 'insertReplacementText')) pickItem(e.target, false);
+});
+$('#view').addEventListener('change', e => {
+  const t = e.target; if (!draft || !t.closest('#ibForm')) return;
+  if (['code', 'name', 'cust'].includes(t.dataset.l)) return pickItem(t, true);
+  if (t.name === 'client') {
+    readForm(); const before = draft.lines.filter(l => l.sku).length;
+    draft.lines = draft.lines.filter(l => !l.sku || item(l.sku).client === draft.client);
+    if (!draft.lines.length) draft.lines.push(blankLine());
+    if (before > draft.lines.filter(l => l.sku).length) toast('Items from the previous customer were removed.');
+    return renderForm('[name="client"]');
+  }
+  if (t.name === 'wh') { readForm(); if (draft.kind === 'order' && !draft.saved) draft.id = obNo(draft.wh); return renderForm('[name="wh"]'); }
+  if (t.dataset.l === 'qty' && draft.kind === 'order') {
+    const r = t.closest('.ib-ln'), c = r.querySelector('.vcell'); readForm();
+    if (c) { const v = lineCheck(draft, draft.lines[+r.dataset.i]); c.innerHTML = v ? pill(v) : ''; }
+  }
+});
+
+/* =====================================================================
+   ROUTER
+   #dashboard (default) · #asn-new · #order-new
+   ===================================================================== */
+const ROUTES = {
+  'asn-new': { nav: '#inbound', show: () => { if (!draft || draft.kind !== 'asn') draft = newAsn(); return asnPage(draft); } },
+  'order-new': { nav: '#outbound', show: () => { if (!draft || draft.kind !== 'order') draft = newOrder(); return orderPage(draft); } }
+};
+function route() {
+  const r = ROUTES[location.hash.slice(1)], nav = r ? r.nav : '#dashboard';
+  document.querySelectorAll('.side .nav').forEach(a => { const on = a.getAttribute('href') === nav; a.classList.toggle('on', on); on ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'); });
+  $('#view').innerHTML = r ? r.show() : dashboard(withSaved(DATA));
+}
+
+$('#companyName').textContent = DATA.company;
+$('#userBox').innerHTML = `<span class="avatar">${esc(DATA.user.name.split(/\s+/).map(x => x[0]).join('').slice(0, 2).toUpperCase())}</span><div><b>${esc(DATA.user.name)}</b><small>${esc(DATA.user.role)}</small></div>`;
 $('#menuBtn').addEventListener('click', () => $('#side').classList.toggle('show'));
 document.addEventListener('click', e => { if (window.innerWidth <= 900 && !e.target.closest('#side,#menuBtn')) $('#side').classList.remove('show'); });
+window.addEventListener('hashchange', () => { route(); window.scrollTo(0, 0); });
 
-render(DATA);
+route();
 </script>
 </body>
 </html>
