@@ -46,6 +46,8 @@ Single self-contained HTML file — no build step.
 | `#reports` · `#reports/fav` | Report dashboard (key figures, every report by category, search, favourites) |
 | `#rep-biz` · `#rep-cust` · `#rep-inv` · `#rep-wh` · `#rep-bill` · `#rep-audit` | Report categories |
 | `#rep/KEY` (e.g. `#rep/monthly`, `#rep/cpt`, `#rep/audit`) | One report, with CSV export and print |
+| `#settings` | Settings home (organization, users & roles, taxes, setup, customization, automation, module settings) |
+| `#settings/KEY` (e.g. `profile`, `users`, `roles`, `data`, `m_inbound`) · `#settings/role/ID` | One settings page; Data & backup has backup, restore and reset |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
