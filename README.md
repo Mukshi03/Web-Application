@@ -25,6 +25,10 @@ Single self-contained HTML file — no build step.
 | `#inbound` | Inbound dashboard |
 | `#asn` · `#asn/new` · `#asn/edit/ASN-101` | ASN register and ASN record (draft → submit → approve) |
 | `#receiving` · `#grn` · `#putaway` · `#ibinv` (add `/edit/ASN-101`) | Receiving, GRN, put-away and inbound inventory for an ASN |
+| `#outbound` | Outbound dashboard |
+| `#oborders` · `#oborders/new` · `#oborders/edit/OB-JED-00061` | Outbound order register and order record |
+| `#alloc` · `#pick` · `#loading` · `#dispatch` (add `/edit/OB-JED-00061`) | Allocate stock, pick & confirm, load, confirm dispatch for an order |
+| `#obhistory` | Outbound exceptions & activity history |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
