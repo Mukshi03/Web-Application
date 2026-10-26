@@ -17,6 +17,9 @@ Single self-contained HTML file — no build step.
 | `#customers` · `#customers/new` · `#customers/edit/CL-001` | Customers list and customer form |
 | `#quotes` · `#quotes/new` · `#quotes/edit/QT-JED-00001` | Service quotations list and form |
 | `#contracts` · `#contracts/new` · `#contracts/edit/CTR-00001` | Contracts list and form |
+| `#items` · `#items/new` · `#items/edit/RSF-RICE-5K` | Customer items (SKUs) list and item form |
+| `#materials` · `#materials/new` · `#materials/edit/MAT-001` | VAS materials list and form |
+| `#groups` · `#categories` · `#uom` (add `/new` to open the form) | Item groups, categories, units of measure |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
@@ -24,4 +27,4 @@ Submitted ASNs and approved orders are added to the dashboard (work queue and re
 ## Data
 
 - Dashboard figures and master data (customers, warehouses, items, stock) are in the `DATA` object at the top of the `<script>` in `index.html`.
-- Customers, quotations, contracts, ASNs and orders are kept in the browser (`localStorage`, key `graylane.web.v2`; sample records are loaded the first time) until a backend exists — replace `persist()` / `store()` with API calls then.
+- Customers, quotations, contracts, items, materials, groups, categories, units, ASNs and orders are kept in the browser (`localStorage`, key `graylane.web.v2`; sample records are loaded the first time) until a backend exists — replace `persist()` / `store()` with API calls then.
