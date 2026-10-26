@@ -56,3 +56,27 @@ Submitted ASNs and approved orders are added to the dashboard (work queue and re
 
 - Dashboard figures and master data (customers, warehouses, items, stock) are in the `DATA` object at the top of the `<script>` in `index.html`.
 - Customers, quotations, contracts, items, materials, groups, categories, units, warehouses, zones, storage areas, bins, ASNs and orders are kept in the browser (`localStorage`, key `graylane.web.v2`; sample records are loaded the first time) until a backend exists — replace `persist()` / `store()` with API calls then.
+
+## Project structure
+
+Each section of the app is its own file. `index.html` loads them in this order:
+
+| File | Section |
+|---|---|
+| `index.html` | Page shell (sidebar, top bar), loads the stylesheet and scripts |
+| `css/styles.css` | All styles (light and dark mode) |
+| `js/core.js` | Sample data, storage, shared helpers, dashboard, new ASN / order forms, sidebar |
+| `js/customers.js` | Customers & Commercial: customers, service quotations, contracts, pop-up forms |
+| `js/items.js` | Items / SKU Master: items, VAS materials, groups, categories, units of measure |
+| `js/warehouse.js` | Warehouse Setup: warehouses, zones, storage areas, bins |
+| `js/inbound.js` | Inbound: ASN, receiving, GRN, put-away, inbound inventory |
+| `js/outbound.js` | Outbound: orders, allocation, pick, load, dispatch, history |
+| `js/inventory.js` | Inventory: stock, holds, moves, transfers, counts, adjustments, damage, ledger, ageing, statement |
+| `js/returns.js` | Returns (RMA) |
+| `js/vas.js` | Value-Added Services |
+| `js/billing.js` | Billing Engine |
+| `js/reports.js` | Reports & Analytics |
+| `js/settings.js` | Settings |
+| `js/app.js` | Router and start-up (must load last) |
+
+The scripts are plain `<script>` files that share one global scope, so keep the load order when adding a file.
