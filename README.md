@@ -38,6 +38,11 @@ Single self-contained HTML file — no build step.
 | `#rma/s1/RMA-JED-00001` (`s2`, `s3`) | One return at step 1, 2 or 3 |
 | `#vas` · `#vasreq` · `#vaswo` · `#vasdone` | VAS dashboard, requests, work orders, completion & verification |
 | `#vasreq/new` · `#vasreq/edit/VAS-JED-00001` · `#vasw/VAS-JED-00001` | New / draft VAS request, and one work order |
+| `#svc` · `#svc/new` · `#svc/view/STR-001` · `#svc/edit/STR-001` | Billing Engine service items |
+| `#ratecard` · `#custrates` | Standard rate card, customer contract rates |
+| `#charges` · `#charges/new` · `#storage` | Charges register, manual charge, storage capture |
+| `#billrun` · `#billrun/new` · `#billrun/view/ID` | Billing runs: run → review & approve → send |
+| `#bdrafts` · `#bdrafts/view/ID` · `#billexc` | Draft invoices and billing exceptions |
 
 All pages follow the lanewms ERP: same fields, required marks, item-line tables, step bar and validation rules.
 Submitted ASNs and approved orders are added to the dashboard (work queue and recent orders).
