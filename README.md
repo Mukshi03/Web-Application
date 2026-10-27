@@ -77,6 +77,24 @@ Each section of the app is its own file. `index.html` loads them in this order:
 | `js/billing.js` | Billing Engine |
 | `js/reports.js` | Reports & Analytics |
 | `js/settings.js` | Settings |
+| `js/flows.js` | Data flows between modules: automatic charges, handling services performed, live dashboard, top search, customer billing figures |
 | `js/app.js` | Router and start-up (must load last) |
 
 The scripts are plain `<script>` files that share one global scope, so keep the load order when adding a file.
+
+## How the data flows
+
+| When this happens | It creates or updates |
+|---|---|
+| GRN approved (or receiving completed with automatic GRN) | Stock (LPNs) and stock ledger, put-away tasks, inbound handling charge HDL-001 per pallet received |
+| Put-away confirmed | Pallet moves from the dock to its bin, bin occupancy |
+| Order allocated / picked / dispatched | Stock reserved, then issued (goods issue in the ledger); on dispatch, order processing HDL-003 and outbound handling HDL-002 per pallet picked |
+| Handling service recorded on a receipt or order | Charge when a supervisor confirms it (rate approval first if it is not on the contract); GRN approval and dispatch wait until lines are confirmed |
+| Bin move, transfer, count, adjustment, hold | Stock, ledger, holds; counts and adjustments post to the ledger |
+| Return received and inspected | New LPNs (good to put-away, hold, damaged), returns handling charge |
+| VAS work verified | Materials used, VAS charge |
+| Contract approved | The rates used by every charge above |
+| Billing run sent | Storage charges (pallet-days from the ledger) and one draft invoice per customer |
+| Anything above | Dashboard figures, work queue and alerts, reports, exceptions, pending approvals, customer billed / unbilled, top search |
+
+Rates come from the customer's active contract, otherwise the standard rate in Service Items.

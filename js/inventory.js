@@ -15,7 +15,7 @@ const invBucket = d => INV_AGE.findIndex(b => d >= b[0] && d <= b[1]);
 const invLiabTone = l => /Gray Lane/.test(l) ? 'bad' : /Customer/.test(l) ? 'mute' : 'info';
 const invQty = (rows, f) => sum(rows.filter(f), s => s.qty);
 const lpnBy = l => DB.stock.find(s => s.lpn === l);
-const frozen = w => SET_FREEZE && DB.counts.some(c => c.type === 'Stock count' && c.status === 'Open' && c.wh === w);
+const frozen = w => SET_FREEZE && (DB.counts || []).some(c => c.type === 'Stock count' && c.status === 'Open' && c.wh === w);
 const usageBin = (w, u) => DB.bins.find(b => b.wh === w && b.usage === u && b.status !== 'Blocked');
 const nidN = (pfx, list) => pfx + '-' + String(1 + Math.max(0, ...list.map(x => +String(x.id).split('-').pop() || 0))).padStart(3, '0');
 const docNoL = (k, loc) => seqNo(k + '@' + loc, k + '-' + loc + '-', 5);

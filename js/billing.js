@@ -390,7 +390,7 @@ Object.assign(DO, {
 function seedBilling() {
   ['bruns', 'bdrafts', 'stSnaps'].forEach(k => { if (!DB[k]) DB[k] = []; }); if (!DB.charges) DB.charges = [];
   if (DB.charges.some(c => c.sample)) return;
-  const plan = [['HDL-001', 'ASN', 24, 9], ['HDL-002', 'OB', 18, 6], ['HDL-003', 'OB', 6, 5], ['TRN-001', 'OB', 2, 4], ['VAS-006', '', 40, 3]];
+  const plan = [['TRN-001', 'OB', 2, 4], ['VAS-006', '', 40, 3], ['VAS-004', '', 2, 6]];
   DB.customers.filter(c => c.status !== 'Inactive').forEach((c, ci) => plan.forEach(([code, src, q, dd], pi) => { if ((ci + pi) % 4 === 3) return; const s = svcBy(code); if (!s.code) return;
     const cr = ctrRate(c.id, code), rate = cr && +cr.rate ? +cr.rate : +s.rate; if (!rate) return;
     const ref = src === 'ASN' ? ((DB.asns.filter(a => a.client === c.id).slice(-1)[0]) || {}).id : src === 'OB' ? ((DB.orders.filter(o => o.client === c.id).slice(-1)[0]) || {}).id : '';

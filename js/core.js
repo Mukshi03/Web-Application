@@ -300,6 +300,7 @@ function initStore() {
   if (!DB.seq.INV) { seedInventory(); DB.seq.INV = 1; changed = true; }
   if (!DB.seq.RMA) { seedReturns(); DB.seq.RMA = 1; changed = true; }
   if (!DB.seq.VAS) { seedVas(); DB.seq.VAS = 1; changed = true; }
+  if (!DB.seq.FLOW) { flowBackfill(); DB.seq.FLOW = 1; changed = true; }
   if (!DB.seq.BILL) { seedBilling(); DB.seq.BILL = 1; changed = true; }
   if (!DB.seq.SET) { setSeed(); DB.seq.SET = 1; changed = true; }
   setSeed();

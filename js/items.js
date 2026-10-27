@@ -193,7 +193,7 @@ function saveItem(d, editSku) {
   }
   const nextCode = () => 'GL-' + (DB.seq.ITEM++);
   const addStock = (sku, q) => { if (!(q > 0)) return; const b = ibSuggest(d.wh, sku, d.client)[0] || DB.bins.find(x => x.wh === d.wh && PUT_ROLES.includes(x.role));
-    DB.stock.push({ lpn: seqNo('LPN', 'LPN-', 6), client: d.client, sku, wh: d.wh, bin: b ? b.code : 'DOCK-IN', batch: d.obatch || '', expiry: d.oexp || '', qty: q, alloc: 0, status: 'Available', received: d.odate, qc: 'Accepted', asn: '', serials: d.oserials }); };
+    const s = { lpn: seqNo('LPN', 'LPN-', 6), client: d.client, sku, wh: d.wh, bin: b ? b.code : 'DOCK-IN', batch: d.obatch || '', expiry: d.oexp || '', qty: q, alloc: 0, status: 'Available', received: d.odate, qc: 'Accepted', asn: '', serials: d.oserials }; DB.stock.push(s); ibMove(d.odate || iso(today), 'Opening stock', 'Item ' + sku, s, q); };
   const rec = { ...base, sku: d.sku, name: d.name, code: nextCode(), variant: isVar ? 'template' : 'single', created: iso(today) };
   if (isVar) { rec.attrName = d.vattr; rec.track = d.track; }
   DB.items.push(rec);
